@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/sameDesign.css">
+    <link rel="stylesheet" href="styles/loginRegister.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="container"> -->
+        <nav>
+            <div class="desktop">
+                <div class="logo"><a href="./index.html">DJoz</a></div>
+                <div class="menuSocial">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="./index.html">HOME</a></li>
+                            <li><a href="">ABOUT</a></li>                        
+                            <li><a href="">TOURS</a></li>
+                            <li><a href="">VIDEOS</a></li>
+                            <li><a href="">PAGES</a></li>
+                            <li><a href="">CONTACT</a></li>
+                            <li><a href="./loginRegister.html">Account</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="social">
+                        <ul>
+                            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> -->
+                 </div>
+                 <i class="fa-solid fa-bars mobileMenuBar"></i>
+            </div>
+            <div class="mobileMenu">
+                <ul>
+                    <li><a href="./loginRegister.html">Account</a></li>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">TOURS</a></li>
+                    <li><a href="">VIDEOS</a></li>
+                    <li><a href="">PAGES</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="loginRegister">
+                <div class="loginRegister_select">
+                    <h4><a href="./index.html">Qeydiyyatsız davam edin  --></a></h4>
+                    <div class="buttons">
+                        <button id="loginBtn" class="buttonFocused" autofocus>Login</button>
+                        <button id="registerBtn">Register</button>
+                    </div>
+                </div>
+                <form action="" class="login" >
+                    <span><input type="text" class="email"  placeholder="Email ünvan" id="loginEmail"></br>
+                        <label for="loginEmail"></label></span>
+                    
+                    <span><input type="password"  placeholder="Şifrə" id="loginPasswd"></br>
+                        <label for="loginPasswd"></label>
+                </span>
+                    
+                    <input type="submit" value="Daxil ol">
+                    <p><a href="">Şifrəmi unutdum</a></p>
+                </form>
+                <form class="register hidden">
+                    <p>Email unvanı ilə daxil olun</p>
+                    <span class="nameSurName"><input id="nameRegister" type="text" placeholder="Ad" ><br>
+                        <label for="nameRegister"></label></span>
+                    <span class="nameSurName">
+                        <input id="surnameRegister" type="text" placeholder="Soyad" ><br>
+                        <label for="surnameRegister"></label></span>
+    
+                    <span><input id="emailRegister" type="text" class="email"  placeholder="Email ünvan" ><br>
+                        <label for="emailRegister"></label></span>
+    
+                    <span>
+                        <input id="passwdRegister" type="password"  placeholder="Şifrə"><br>
+                        <label for="passwdRegister"></label></span>
+    
+                    <span>
+                        <input id="repasswdRegister" type="password"  placeholder="Təkrar şifrə"><br>
+                        <label for="repasswdRegister"></label> </span>
+                    <span><input type="checkbox" id="checkbox"><span class="terms">Kampaniyalardan xəbərdar olmaq üçün məlumat almaq istəyirik, Qaydalar və şərtlər Qaydalarla razıyam.</span></span>
+    
+                    <input  type="submit" value="Qeydiyyat">
+                </form>
+    
+            </div>
+        </main>
+    <!-- </div> -->
+
+
+    <script src="./js/loginRegister.js"></script>
+    <!-- <script src="./js/profile.js"></script> -->
+</body>
+</html>

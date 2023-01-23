@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/sameDesign.css">
+    <link rel="stylesheet" href="styles/accountStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="desktop">
+            <div class="logo"><a href="./index.html">DJoz</a></div>
+            <div class="menuSocial">
+                <div class="menu">
+                    <ul>
+                        <li><a href="./index.html">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>                        
+                        <li><a href="">TOURS</a></li>
+                        <li><a href="">VIDEOS</a></li>
+                        <li><a href="">PAGES</a></li>
+                        <li><a href="">CONTACT</a></li>
+                        <li class="signInSignUp"><a  href="./loginRegister.html">Account</a></li>
+                        <li class="profile"><a  href="">Profile</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="social">
+                    <ul>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div> -->
+             </div>
+             <i class="fa-solid fa-bars mobileMenuBar"></i>
+        </div>
+        <div class="mobileMenu">
+            <ul>
+                <li class="profile"><a href="./profile.html">Profile</a></li>
+                <li class="signInSignUp"><a href="./loginRegister.html">Account</a></li>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">TOURS</a></li>
+                <li><a href="">VIDEOS</a></li>
+                <li><a href="">PAGES</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+        <main>
+            <h1>Hesab Məlumatları</h1>
+        <div class="accountDetails">
+            <div class="profile">
+                <form id="profileDetail" class="profileSettings" onsubmit="return test">
+                    <span><label for="name">Ad</label><input type="text" placeholder="Ad" id="name" ></span>
+                <span><label for="surname">Soyad</label><input type="text" placeholder="Soyad" id="surname" ></span>
+                <span><label for="email">Email</label><input readonly type="text" placeholder="Email" id="email" ></span>
+                <span><label for="telephone">Telefon Nomresi</label><input type="text" placeholder="+994 XX XXX XX XX" id="telephone" ></span>
+                <span><label for="birthday">Dogum tarixi</label><input type="date" placeholder="birthday" id="birthday" ></span>
+                
+                <span><label for="gender">Cinsiyyət seçin</label>
+                    <select id="gender" name="genderlist" form="profileDetail">
+                    <option value="none">Daxil et</option>
+
+                    <option value="male">Kişi</option>
+                    <option value="famale">Qadın</option>
+                    
+                    </select></span>
+                
+                <input type="submit" id="changeInfo" value="Hesab melumatlarini yenileyin">
+                </form>
+
+
+            </div>
+            <div class="passwordReset">
+                <h4>Sifreni yenileyin</h4>
+                <form  class="changePasswd">
+                    <span><input type="password" id="oldPasswd" placeholder="Kohne kod"><label for="oldPasswd">Kohne</label></span>
+                    <span><input type="password" id="newPasswd" placeholder="Yeni kod"><label for="newPasswd">Yeni</label></span>
+                    <span><input type="password" id="confirmNewPasswd" placeholder="Yeniden yeni kod"><label for="confirmNewPasswd">Yeniden</label></span>
+                    <span><p id="infoNewPasswd"></p></span>
+                <span><input type="submit" id="changePasswd" value="Change password"></span>
+
+                </form>
+            </div>
+        </div>
+        <form action="" id="signoutForm">
+            <input type="submit" id="signoutBtn" value="Log out">
+        </form>
+        </main>
+        
+   
+
+    <script src="./js/profile.js"></script>
+</body>
+</html>

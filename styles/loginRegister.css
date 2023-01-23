@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+body {
+  --nav-bg-color:#5219a2b4;
+  --nav-font-color:white;
+  --contact--btn--color: #5C00CE;
+  --contact--btn--content--color: white;
+  --music--btn--color:#E934FF;
+  width: 100%;
+}
+body main {
+  width: 100%;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+body main .loginRegister {
+  width: 500px;
+  min-height: 650px;
+  padding-bottom: 40px;
+  background-color: #f8f8f8;
+  border: 0.6px solid rgb(177, 176, 176);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+}
+body main .loginRegister_select {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+}
+body main .loginRegister_select h4 {
+  font-size: 17px;
+}
+body main .loginRegister_select .buttons {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  align-items: center;
+}
+body main .loginRegister_select .buttons button {
+  width: 49.5%;
+  height: 96%;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: none;
+  transition: 0.3s;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+body main .loginRegister_select .buttons .buttonFocused {
+  background-color: white;
+}
+body main .loginRegister input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 15px;
+  border: 0;
+  background-color: #eeeeee;
+  transition: 0.5s;
+}
+body main .loginRegister input:not([type=submit]):focus {
+  background-color: #fff;
+  outline: 0;
+}
+body main .loginRegister .login {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+body main .loginRegister .login input[type=submit] {
+  background-color: #b6958b;
+  color: #eeeeee;
+  cursor: pointer;
+}
+body main .loginRegister .login input[type=submit]:hover {
+  background-color: #eeeeee;
+  color: #b6958b;
+}
+body main .loginRegister .register {
+  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+body main .loginRegister .register span {
+  width: 100%;
+}
+body main .loginRegister .register .nameSurName {
+  width: 49%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+input[type=checkbox] {
+  width: 17px !important;
+}
+
+label {
+  color: red;
+}/*# sourceMappingURL=loginRegister.css.map */

@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: black;
+}
+body main {
+  width: 100%;
+  display: flex;
+  padding: 140px 40px 0 40px;
+  flex-direction: column;
+  align-items: center;
+}
+body main h1 {
+  color: white;
+}
+body main .musicBoxes {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+body main .musicBoxes .music {
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+}
+body main .musicBoxes .music .musicImg {
+  width: 100%;
+  height: 70%;
+}
+body main .musicBoxes .music .musicImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .musicBoxes .music .musicImg .author {
+  width: 100%;
+}
+body main .musicBoxes .music .musicImg .song {
+  width: 100%;
+}/*# sourceMappingURL=music.css.map */
