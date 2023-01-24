@@ -8,45 +8,184 @@
 
 body {
   background-color: black;
+  width: 100%;
+  height: 100%;
 }
 body main {
   width: 100%;
+  height: 100%;
   display: flex;
-  padding: 140px 40px 0 40px;
   flex-direction: column;
   align-items: center;
+  padding: 140px 0 0 0;
+  row-gap: 10px;
 }
-body main h1 {
-  color: white;
-}
-body main .musicBoxes {
+body main .header {
   width: 100%;
   display: flex;
+  justify-content: center;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: white;
+}
+body main .musicControll {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+body main .musicControll .musicPlayer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
   justify-content: start;
+  row-gap: 7px;
+}
+body main .musicControll .musicPlayer_controls {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+  row-gap: 10px;
+}
+body main .musicControll .musicPlayer_controls .music_name {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 0 9px;
+}
+body main .musicControll .musicPlayer_controls .music_name .name {
+  font-size: 25px;
+}
+body main .musicControll .musicPlayer_controls .music_name .author {
+  color: grey;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+body main .musicControll .musicPlayer_controls .music_controls {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  align-items: center;
+  padding: 0 20px;
+}
+@media (max-width: 1000px) {
+  body main .musicControll .musicPlayer_controls .music_controls {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+body main .musicControll .musicPlayer_controls .music_controls i {
+  font-size: 20px;
+}
+body main .musicControll .musicPlayer_controls .music_controls .fa-volume-up {
+  position: relative;
+}
+body main .musicControll .musicPlayer_controls .music_controls .fa-volume-up input[type=range] {
+  position: absolute;
+  top: -85px;
+  left: -53px;
+  transform: rotateZ(-90deg);
+}
+body main .musicControll .musicPlayer_controls .music_controls .play {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: var(--music--btn--color);
+  cursor: pointer;
+}
+body main .musicControll .musicPlayer_progress {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(128, 128, 128, 0.452);
+  border-radius: 10px;
+  position: relative;
+}
+body main .musicControll .musicPlayer_progress .progressBar {
+  border-radius: 10px;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  top: 0;
+}
+body main .musicControll .musicPlayer_progress .progressBar .circle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body main .musicControll .musicPlayer_progress .progressBar .circle .round {
+  position: absolute;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  top: -3px;
+  right: -10px;
+  background-color: white;
+}
+body main .dataControls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  row-gap: 20px;
+}
+body main .dataControls .filterBtn {
+  width: 150px;
+  height: 30px;
+  font-size: 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body main .dataControls .filterBtn:hover {
+  background-color: #181818;
+  color: white;
+}
+body main .musicBox {
+  width: 70%;
+  background-color: #151515;
+  display: flex;
+  padding: 20px;
   flex-wrap: wrap;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
-body main .musicBoxes .music {
-  width: 200px;
-  height: 250px;
-  background-color: white;
+body main .musicBox .music {
+  width: 150px;
+  height: 200px;
+  background-color: #181818;
   border-radius: 10px;
+  cursor: pointer;
 }
-body main .musicBoxes .music .musicImg {
+body main .musicBox .music .musicImg {
   width: 100%;
   height: 70%;
 }
-body main .musicBoxes .music .musicImg img {
+body main .musicBox .music .musicImg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
-body main .musicBoxes .music .musicImg .author {
+body main .musicBox .music .musicContent {
   width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
-body main .musicBoxes .music .musicImg .song {
-  width: 100%;
+
+.selected {
+  background-color: #181818;
+  color: white;
 }/*# sourceMappingURL=music.css.map */

@@ -12,43 +12,206 @@
 
 body{
     background-color: black;
+    width: 100%;
+    height: 100%;
     main{
         width: 100%;
+        height: 100%;
         display: flex;
-        padding: 140px 40px 0 40px ;
         flex-direction: column;
         align-items: center;
-        h1{
+        padding: 140px 0 0 0 ;
+        row-gap: 10px
+        ;
+        .header{
+            width: 100%;
+            // height: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            letter-spacing: 1px;
             color: white;
         }
-        .musicBoxes{
+        .musicControll{
             width: 100%;
             display: flex;
-            justify-content: start;
+            justify-content: center;
+            height: 100px;
+            .musicPlayer{
+                width: 50%;
+                // height: 130px;
+                // background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                row-gap: 7px;
+                // padding-bottom: 20px;
+                
+                &_controls{
+                    width: 100%;
+                    height: 55%;
+                    // background-color: black;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    color: white;
+                    row-gap: 10px;
+                    
+
+                    .music_name{
+                        // width: 200px;
+                        height: 100%;
+                        // background-color: red;
+                        display:flex;
+                        flex-direction: column;
+                        // justify-content: center;
+                        row-gap: 5px;
+                        padding: 0 9px;
+                        .name{
+                            font-size: 25px;
+                        }
+                        .author{
+                            color: grey;
+                            font-size: 19px;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .music_controls{
+                        // width: 400px;
+                        height: 100%;
+                        // background-color: green;
+                        display: flex;
+                        justify-content: end;
+                        column-gap: 25px;
+                        align-items: center;
+                        padding: 0 20px;
+                        @include tablet{
+                            column-gap: 10px;
+                        }
+                        i{
+                            font-size: 20px;
+                        }
+                        .fa-volume-up{ 
+                            position: relative;
+                            // overflow: hidden;
+                            input[type=range]{
+                                position: absolute;
+                                
+                                top: -85px;
+                                left: -53px;
+                                transform: rotateZ(-90deg);
+                            }
+                        }
+
+                        .play{
+                            display: grid;
+                            place-content: center;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 100px;
+                            background-color: var(--music--btn--color);
+                            cursor: pointer;
+
+                        }
+
+
+                        
+                    }
+                }
+                &_progress{
+                    width: 100%;
+                    height: 6px;
+                    background-color: rgba(128, 128, 128, 0.452);
+                    border-radius: 10px;
+                    // overflow: hidden;
+                    position: relative;
+                    .progressBar{
+                    border-radius: 10px;
+
+                        width: 0%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        background-color: white;
+                        top: 0;
+                        .circle{
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            .round{
+                                position: absolute;
+                                display: inline-block;
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 100px;
+                                top: -3px;
+                                right: -10px;
+                                background-color: white;
+                            }
+                        }
+
+                    }
+                
+                }
+
+            }
+        }
+        .dataControls{
+            width: 100%;
+            display: flex;
+            justify-content: center;
             column-gap: 20px;
-            row-gap: 20px;
+            .filterBtn{
+                width: 150px;
+                height: 30px;
+                font-size: 17px;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .filterBtn:hover{
+                background-color: #181818;
+                color: white;
+            }
+        }
+        .musicBox{
+            width: 70%;
+            // height: 20px;
+            background-color: #151515;
+            display: flex;
+            padding: 20px;
             flex-wrap: wrap;
+            row-gap: 20px;
+            column-gap: 20px;
             .music{
-                width: 200px;
-                height: 250px;
-                background-color: white;
+                width: 150px;
+                height: 200px;
+                background-color: #181818;
                 border-radius: 10px;
+                cursor: pointer;
                 .musicImg{
                     width: 100%;
                     height: 70%;
                     img{
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
-                    }
-                    .author{
-                        width: 100%;
-                    }.song{
-                        width: 100%;
                     }
                 }
+                .musicContent{
+                    width: 100%;
+                    height: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: white;
+                }
             }
-
         }
+        
     }
+}
+
+.selected{
+    background-color: #181818;
+    color: white;
 }

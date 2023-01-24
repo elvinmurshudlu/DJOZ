@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles/sameDesign.css">
     <link rel="stylesheet" href="styles/music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -17,12 +19,12 @@
                     <ul>
                         <li><a href="./index.html">HOME</a></li>
                         <li><a href="">ABOUT</a></li>                        
-                        <li><a href="">TOURS</a></li>
+                        <li><a href="music.html">Music</a></li>
                         <li><a href="">VIDEOS</a></li>
                         <li><a href="">PAGES</a></li>
                         <li><a href="">CONTACT</a></li>
                         <li class="signInSignUp"><a  href="./loginRegister.html">Account</a></li>
-                        <li class="profile"><a  href="">Profile</a></li>
+                        <li class="profile"><a  href="./profile.html">Profile</a></li>
                     </ul>
                 </div>
                 <!-- <div class="social">
@@ -42,7 +44,7 @@
                 <li class="signInSignUp"><a href="./loginRegister.html">Account</a></li>
                 <li><a href="./index.html">HOME</a></li>
                 <li><a href="">ABOUT</a></li>
-                <li><a href="">TOURS</a></li>
+                <li><a href="music.html">MUSIC</a></li>
                 <li><a href="">VIDEOS</a></li>
                 <li><a href="">PAGES</a></li>
                 <li><a href="">CONTACT</a></li>
@@ -50,17 +52,63 @@
         </div>
     </nav>
     <main>
-        <h1>Musics</h1>
-        <div class="musicBoxes">
-            <div class="music">
+        <div class="header">Musics</div>
+        <div class="musicControll"><div class="musicPlayer">
+            <div class="musicPlayer_controls">
+                <div class="music_name">
+                    <p class="name"></p>
+                    <p class="author"></p>
+                    
+                </div>
+                <div class="music_controls">
+                    <audio id="mainMusic" src=""></audio>
+                    <i class="fa-solid fa-shuffle"></i>
+                    <i class="fa fa-step-backward"></i>
+                    <span class="play"><i class="fa-solid fa-play"></i></span>
+                    <i class="fa fa-step-forward"></i>
+                    <i class="fa fa-volume-up" aria-hidden="true">
+                        <input type="range" class="hidden" min="0" max="100">
+                    </i>
+                    <span class="timer">
+                        <span class="timer_current">
+                            <span class="timer_current_minute">00</span>:<span class="timer_current_second">00</span>
+                        </span>/
+                        <span class="timer_duration">
+                            <span class="timer_duration_minute">00</span>:<span class="timer_duration_second">00</span>
+                            
+
+                        </span>
+
+                    </span>
+                </div>
+
+            </div>
+            <div class="musicPlayer_progress">
+                <div class="progressBar">
+                    <div class="circle"><span class="round"></span></div>
+                </div>
+            </div>
+        </div></div>
+        <div class="dataControls">
+            <button class="filterBtn selected" id="all">All</button>
+            <button class="filterBtn" id="miyagi">Miyagi</button>
+            <button class="filterBtn" id="eminem">Eminem</button>
+            <button class="filterBtn" id="mabelMatiz">Mabel Matiz</button>
+            <button class="filterBtn" id="cemAdrian">Cem Adrian</button>
+            <button class="filterBtn" id="rammstein">Rammstein</button>
+            <!-- <button class="filterBtn" id="acdc">AC/DC</button> -->
+        </div>
+        <div class="musicBox">
+            <!-- <div class="music">
                 <div class="musicImg">
                     <img src="" alt="">
                 </div>
-                <div class="author"></div>
-                <div class="song"></div>
-            </div>
-            
-            <!-- <div class="music"></div> -->
+                <div class="musicContent">
+                    <div class="musicAuthor">Miyagy</div>
+                    <div class="musicName">i got love</div>
+                </div>
+            </div> -->
+
         </div>
 
     </main>

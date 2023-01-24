@@ -129,4 +129,8 @@ body nav .mobileMenu ul li a {
 }
 body nav .mobileMenu ul li li:hover {
   background-color: red;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=sameDesign.css.map */

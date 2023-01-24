@@ -16,7 +16,32 @@ let loggedAccoundID = localStorage.getItem("loggedAccoundID")
 let registeredAccountsJSON = localStorage.getItem("registeredAccounts")
 let registeredMailsJSON = localStorage.getItem("registeredMails")
 
+let signInSignUpS = document.querySelectorAll(".signInSignUp")
+let profileS = document.querySelectorAll(".profile")
 
+if(isLogged =="true"){
+    // signInSignUp.style.display = "none"
+    // profile.style.display = "inline-block"
+    signInSignUpS.forEach((signInSignUp)=>{
+        signInSignUp.classList.add("hidden")
+    })
+    profileS.forEach((profile)=>{
+        profile.classList.remove("hidden")
+
+    })
+
+}else{
+    // profile.style.display = "none"
+    // signInSignUp.style.display = "inline-block"
+    signInSignUpS.forEach((signInSignUp)=>{
+    signInSignUp.classList.remove("hidden")
+
+    })
+    profileS.forEach((profile)=>{
+        profile.classList.add("hidden")
+
+    })
+}
 
 // let account = {
 //     username:"elvin@gmail.com",
@@ -87,81 +112,81 @@ function invalidElement(element,condition=true,msg="daxil edilməyib!"){
 }
 
 
-function formSubmit(form,registerRequest = false){
-    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/    
-    // let elements = form.childNodes
-    let elements = form.querySelectorAll(`.${form.classList[0]} *`)
-    let isFirstPasswordSelected = false
-    let firstPassword
-    let result = true
-    for(let a = 0;a<elements.length -1;a++){
-        let element = elements[a]
-        if(element.tagName =="INPUT" && element.type !="submit" && element.type !="checkbox" ){
-            if(element.classList.contains("email")){
-                if(!correctEmailRE.test(element.value)){
-                    invalidElement(element)
-                    result = false
-                    // return false
+// function formSubmit(form,registerRequest = false){
+//     let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/    
+//     // let elements = form.childNodes
+//     let elements = form.querySelectorAll(`.${form.classList[0]} *`)
+//     let isFirstPasswordSelected = false
+//     let firstPassword
+//     let result = true
+//     for(let a = 0;a<elements.length -1;a++){
+//         let element = elements[a]
+//         if(element.tagName =="INPUT" && element.type !="submit" && element.type !="checkbox" ){
+//             if(element.classList.contains("email")){
+//                 if(!correctEmailRE.test(element.value)){
+//                     invalidElement(element)
+//                     result = false
+//                     // return false
                     
-                }else{
-                    invalidElement(element,false)
-                }
-            }
-            else if(element.type !="password" && element.value.trim() ==""){
-                // console.log("Xana bosdur")
-                invalidElement(element)
-                result = false
-                // return false
+//                 }else{
+//                     invalidElement(element,false)
+//                 }
+//             }
+//             else if(element.type !="password" && element.value.trim() ==""){
+//                 // console.log("Xana bosdur")
+//                 invalidElement(element)
+//                 result = false
+//                 // return false
 
 
 
 
-            }else if(element.type =="password" && element.value ==""){
-                // console.log("Password yazilmadi")
-                invalidElement(element)
-                result = false
-                // return false
+//             }else if(element.type =="password" && element.value ==""){
+//                 // console.log("Password yazilmadi")
+//                 invalidElement(element)
+//                 result = false
+//                 // return false
 
-            }else{
-                invalidElement(element,false)
-            }
+//             }else{
+//                 invalidElement(element,false)
+//             }
 
-        }else if(element.tagName =="INPUT" && element.type =="checkbox"){
-            if(!element.checked){
-                result = false
-                document.querySelector(".terms").style.color = "red"
+//         }else if(element.tagName =="INPUT" && element.type =="checkbox"){
+//             if(!element.checked){
+//                 result = false
+//                 document.querySelector(".terms").style.color = "red"
                 
-            }else{
-                document.querySelector(".terms").style.color = "black"
+//             }else{
+//                 document.querySelector(".terms").style.color = "black"
 
-            }
-        }
-    }
-    if(registerRequest){
-        for(let a =0;a<elements.length-1;a++){
-            let element = elements[a]
-            if(element.type == "password"){
-                if(isFirstPasswordSelected){
-                    if(element.value !=firstPassword){
+//             }
+//         }
+//     }
+//     if(registerRequest){
+//         for(let a =0;a<elements.length-1;a++){
+//             let element = elements[a]
+//             if(element.type == "password"){
+//                 if(isFirstPasswordSelected){
+//                     if(element.value !=firstPassword){
 
-                        // console.log("Sifreler ferqlidir")
-                        invalidElement(element)
-                        element.labels[0].innerHTML = `${element.placeholder} yanlış daxil edilib`
+//                         // console.log("Sifreler ferqlidir")
+//                         invalidElement(element)
+//                         element.labels[0].innerHTML = `${element.placeholder} yanlış daxil edilib`
 
-                        result = false
-                        // return false
+//                         result = false
+//                         // return false
                         
-                    }
-                }
-                firstPassword = element.value
-                isFirstPasswordSelected = true
-            }
-        }
-    }
+//                     }
+//                 }
+//                 firstPassword = element.value
+//                 isFirstPasswordSelected = true
+//             }
+//         }
+//     }
     
-    return result
-    // return true
-}
+//     return result
+//     // return true
+// }
 
 
 
@@ -217,8 +242,8 @@ function loginSubmit(){
         }
     }
 
-    // return result
-    return true
+    return result
+    // return true
 
 }
 
