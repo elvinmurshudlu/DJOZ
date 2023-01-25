@@ -21,6 +21,17 @@ body main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 10px;
+}
+body main .profileButtons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+body main .profileButtons button {
+  padding: 5px 10px;
 }
 body main .accountDetails {
   width: 1000px;
@@ -79,6 +90,120 @@ body main .accountDetails .passwordReset {
   row-gap: 30px;
   align-self: center;
   justify-self: center;
+}
+body main .statistic {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
+}
+body main .statistic .listenInformation {
+  width: 100%;
+  height: 40%;
+  border: 1px solid black;
+  display: flex;
+}
+body main .statistic .listenInformation .total {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+body main .statistic .listenInformation .total span {
+  font-size: 25px;
+}
+body main .statistic .listenInformation .progressBars {
+  width: 700px;
+  height: 100%;
+  display: flex;
+}
+body main .statistic .listenInformation .progressBars-nums {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+}
+body main .statistic .listenInformation .progressBars-nums .category {
+  font-size: 20px;
+  font-weight: 800;
+}
+body main .statistic .listenInformation .progressBars-nums .time {
+  font-size: 17px;
+}
+body main .statistic .listenInformation .progressBars-nums .progressBar {
+  width: 190px;
+  height: 6px;
+  background-color: red;
+  border-radius: 10px;
+  position: relative;
+}
+body main .statistic .listenInformation .progressBars-nums .progressBar .bar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: blue;
+  transition: 5s;
+}
+body main .statistic .listenInformation .progressBars-nums .progressBar .percentage {
+  position: absolute;
+  right: -30px;
+  top: -6px;
+}
+body main .statistic .listenInformation .progressBars-bars {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+}
+body main .statistic .filter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main .statistic .filter button {
+  padding: 6px 15px;
+  background-color: blue;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+body main .statistic .musicBox {
+  width: 100%;
+  background-color: #151515;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+body main .statistic .musicBox .music {
+  width: 150px;
+  height: 200px;
+  background-color: #181818;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body main .statistic .musicBox .music .musicImg {
+  width: 100%;
+  height: 70%;
+}
+body main .statistic .musicBox .music .musicImg img {
+  width: 100%;
+  height: 100%;
+}
+body main .statistic .musicBox .music .musicContent {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 body main #signoutBtn {
   width: 120px;

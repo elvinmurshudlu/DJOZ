@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="./styles/sameDesign.css">
+    <link rel="stylesheet" href="./styles/video.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="desktop">
+            <div class="logo"><a href="./index.html">DJoz</a></div>
+            <div class="menuSocial">
+                <div class="menu">
+                    <ul>
+                        <li><a href="./index.html">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>                        
+                        <li><a href="music.html">MUSIC</a></li>
+                        <li><a href="">VIDEOS</a></li>
+                        <li><a href="">PAGES</a></li>
+                        <li><a href="">CONTACT</a></li>
+                        <li class="signInSignUp"><a  href="./loginRegister.html">Account</a></li>
+                        <li class="profile"><a  href="./profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="social">
+                    <ul>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div> -->
+             </div>
+             <i class="fa-solid fa-bars mobileMenuBar"></i>
+        </div>
+        <div class="mobileMenu">
+            <ul>
+                <li class="profile"><a href="./profile.html">Profile</a></li>
+                <li class="signInSignUp"><a href="./loginRegister.html">Account</a></li>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="music.html">MUSIC</a></li>
+                <li><a href="">VIDEOS</a></li>
+                <li><a href="">PAGES</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="videoPlayer">
+                <div class="video">
+                    <video class="mainVideo" src="" type="mp4" ></video>
+                    <div class="videoControl">
+                        <div class="progress">
+                            <div class="progress_bar"></div>
+                            <div class="capture hidden">
+                                <div class="capture_video">
+                                    <video id="capture_video" src=""></video>
+                                </div>
+                                <div class="capture_time"></div>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <div class="manageAndVolume">
+                                <i class="fa-solid fa-backward"></i>
+                                <i class="fa-solid fa-play playPauseBtn"></i>
+                                <i class="fa-solid fa-forward"></i>
+                                <i class="fa-sharp fa-solid fa-volume-high volumeBtn">
+                                <input class="videoVolume" type="range" min="0" max="100"></i>  
+                                <p class="duration"><span class="currentTime"></span>/<span class="durationTime"></span></p>  
+                                                           
+    
+                                 
+                            </div>
+                            <div class="screenType">
+                                <i class="fa-solid fa-expand fullScreen"></i>
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoList">
+                    <div class="list" data-src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4">
+                        <div class="list_video">
+                            <video src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4" type="mp4"></video>
+                        </div>
+                        <div class="list_title">Moon</div>
+                    </div>
+                    <div class="list" data-src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4">
+                        <div class="list_video">
+                            <video src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4" type="mp4"></video>
+                        </div>
+                        <div class="list_title">TopFinishes: Khabib Nurmagomedov</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+
+
+    <script src="./js/video.js"></script>
+</body>
+</html>

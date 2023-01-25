@@ -6,9 +6,18 @@ let loggedAccoundID = localStorage.getItem("loggedAccoundID")
 
 let registeredAccountsJSON = localStorage.getItem("registeredAccounts")
 let savedMusicDataJson = localStorage.getItem("savedMusicData")
+
 let savedMusicData = JSON.parse(savedMusicDataJson)
 
+
 let registeredAccounts = JSON.parse(registeredAccountsJSON)
+let likedMusicTotalData= (JSON.parse(localStorage.getItem("likedMusic")))
+if((JSON.parse(localStorage.getItem("likedMusic")))!=null){
+    likedMusic = (JSON.parse(localStorage.getItem("likedMusic")))[loggedAccoundID]
+}else{
+    likedMusic = []
+}
+
 
 mobileMenuBar.addEventListener("click",mobileMenuToggle)
 function mobileMenuToggle(){
@@ -303,6 +312,24 @@ for(let a = 0;a<music.length;a++){
     musicGenerate(selectedMusic.musicAuthor,selectedMusic.musicName,selectedMusic.type,selectedMusic.musicSrc,selectedMusic.id,selectedMusic.coverImg)
 }
 allMusic = document.querySelectorAll(".music")
+
+allMusic.forEach((music,index)=>{
+    music.addEventListener('click',()=>{
+        likedMusicTotalData = JSON.parse(localStorage.getItem("likedMusic"))
+        if(likedMusicTotalData==null){
+            likedMusicTotalData = {}
+        }
+        if(likedMusic.includes(index)){
+            likedMusic.splice(likedMusic.indexOf(index),1)
+        }else{
+            likedMusic.push(index)
+        }
+        
+        console.log(likedMusic)
+        likedMusicTotalData[loggedAccoundID]=likedMusic
+        localStorage.setItem("likedMusic",JSON.stringify(likedMusicTotalData))
+    })
+})
 
 function setPlayableMusic(){
     playableMusic = []

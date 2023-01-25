@@ -18,131 +18,7 @@ body{
     --music--btn--color:#E934FF;
     width: 100%;
     scrollbar-color: red;
-    // nav{
-    //     width: 100%;
-    //     height: 120px;
-    //     background-color: var(--nav-bg-color);
-    //     position: fixed; 
-    //     z-index: 5;  
-        
-    //    .desktop{
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     padding: 0 120px;
-    //     width: 100%;
-    //     height: 100%;
-    //     @include desktop{
-    //         padding: 0 20px;
-    //     }
-        
-    //     @include tablet{
-    //         padding: 0 10px;
-    //         // justify-content: space-evenly;
-    //     }
-    //     a,i{
-    //         color: var(--nav-font-color);
-            
-    //     }
-    //     li{
-    //         line-height: 30px;
-            
-    //     }
-    //     .mobileMenuBar{
-    //         display: none;
-    //         font-size: 30px;
-    //         @include tablet{
-    //             display: block;
-    //         }
-    //     }
-    //     .logo{
-    //         a{
-    //             font-size: 40px;
-    //             font-weight: 800;
-    //             // color: var(--nav-font-color);
-                
-    //         }
-    //     }
-    //     .menuSocial{
-    //         display: flex;
-    //         column-gap: 60px;
-    //         @include tablet{
-    //             display: none;
-    //         }
-    //         .menu{
-    //             ul{
-    //                 display: flex;
-    //                 column-gap: 50px;
-    //                 font-size: 17px;
-    //                 li{
-    //                     // text-decoration: underline;
-    //                     transition: 1s;
     
-    //                 }
-    //                 li:hover{
-    //                     border-bottom: 1px solid white;
-    //                 }
-                    
-                        
-                    
-    //             }
-    //         }
-    //         .social{
-    //             ul{
-    //                 display: flex;
-    //                 column-gap: 18px;
-    //             }
-    //             @include desktop{
-    //                 display: none !important;
-    //             }
-    //         }
-    
-    //     }
-        
-    //    }
-    //    .mobileMenu{
-    //     width: 100%;
-    //     transition: 0.5s;       
-    //     background-color: var(--nav-bg-color);
-    //     display: none;
-    //     overflow: hidden;
-    //     height: 0;
-    //     padding: 0 30px 0 30px;
-    //     @include tablet{
-    //         display: grid !important;
-            
-    
-    //     }
-    //     ul{
-    //         width: 100%;
-    //         height: 100%;
-    //         display: inline-block;
-    //         background-color: grey;
-    //         flex-direction: column;
-    //         padding: 0 10px 0 0; 
-            
-    //         li{
-    //             display: inline-block;
-    //             width: 100%;
-    //             line-height: 35px;
-    //             padding: 0 10px;
-    //             border-radius: 10px;
-    //             a{
-    //                 color: var(--nav-font-color);
-    //             }
-    //             li:hover{
-    //             background-color: red;
-    
-    //             }
-    //         }
-    
-    //     }
-       
-        
-    // }
-    
-    
-    // } 
 
 
     main{
@@ -151,6 +27,18 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        row-gap: 10px;
+        .profileButtons{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            column-gap: 10px;
+            button{
+                padding: 5px 10px;
+                
+
+            }
+        }
         .accountDetails{
             width: 1000px;
             height: 500px;
@@ -220,6 +108,129 @@ body{
     
     
             }
+        }
+        .statistic{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid black; 
+            .listenInformation{
+                width: 100%;
+                height: 40%;
+                border: 1px solid black;
+                display: flex;
+                .total{
+                    width: 300px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    row-gap: 10px;
+                    span{
+                        font-size: 25px;
+                    }
+                }
+                .progressBars{
+                    width: 700px;
+                    height: 100%;
+                    display: flex;
+                    &-nums{
+                        // width: 200px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        row-gap: 10px;
+                        .category{
+                            font-size: 20px;
+                            font-weight: 800;
+                        }
+                        .time{
+                            font-size: 17px;
+                        }
+
+
+                        .progressBar{
+                            width: 190px;
+                            height: 6px;
+                            background-color: red;
+                            border-radius: 10px;
+                            position: relative;
+                            .bar{
+                                position: absolute;
+                                width: 0% ;
+                                height: 100%;
+                                background-color: blue;
+                                transition: 5s;
+                            }
+                            .percentage{
+                                position: absolute;
+                                right: -30px;
+                                top: -6px;
+                            }
+                        }
+
+
+                    }
+                    &-bars{
+                        width: 500px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        row-gap: 10px;
+                        
+                    }
+
+                }
+            } 
+            .filter{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                button{
+                    // width: 150px;
+                    padding: 6px 15px;
+                    background-color: blue;
+                    border: 0;
+                    color: white;
+                    cursor: pointer;
+                }
+
+            }.musicBox{
+                width: 100%;
+            // height: 20px;
+                background-color: #151515;
+                display: flex;
+                padding: 20px;
+                flex-wrap: wrap;
+                row-gap: 20px;
+                column-gap: 20px;
+                .music{
+                    width: 150px;
+                    height: 200px;
+                    background-color: #181818;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    .musicImg{
+                        width: 100%;
+                        height: 70%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .musicContent{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: white;
+                    }
+                }
+            }
+            
         }
         #signoutBtn{
             width: 120px;

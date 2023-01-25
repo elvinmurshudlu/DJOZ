@@ -52,8 +52,13 @@
         </div>
     </nav>
         <main>
-            <h1>Hesab Məlumatları</h1>
-        <div class="accountDetails">
+            <!-- <h1>Hesab Məlumatları</h1> -->
+            <div class="profileButtons">
+                <button id="statistic">Statistic</button>
+
+                <button id="profileInfo">Hesab məlumatları</button>
+            </div>
+        <div data-formname="profileInfo" class="accountDetails hidden ">
             <div class="profile">
                 <form id="profileDetail" class="profileSettings" onsubmit="return test">
                     <span><label for="name">Ad</label><input type="text" placeholder="Ad" id="name" ></span>
@@ -87,6 +92,27 @@
 
                 </form>
             </div>
+        </div>
+        <div data-formname="statistic" class="statistic ">
+            <div class="listenInformation">
+                <div class="total">
+                    <h1>Total Liste Time</h1>
+                    <span id="totalListenedTme">Time</span>
+                </div>
+                <div class="progressBars">
+                    <div class="progressBars-nums">
+                        
+                        
+                    </div>
+                    <!-- <div class="progressBars-bars">
+                        
+                    </div> -->
+                </div>
+            </div>
+            <div class="filter">
+                <button id="likedVideosBtn">Liked music</button>
+            </div>
+            <div data-filterforms="likedVideosBtn" class="musicBox"></div>
         </div>
         <form action="" id="signoutForm">
             <input type="submit" id="signoutBtn" value="Log out">
