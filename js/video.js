@@ -8,7 +8,29 @@ let registeredAccountsJSON = localStorage.getItem("registeredAccounts")
 let savedMusicDataJson = localStorage.getItem("savedMusicData")
 let savedMusicData = JSON.parse(savedMusicDataJson)
 
+
 let registeredAccounts = JSON.parse(registeredAccountsJSON)
+let currentAccount
+let loadingScreen = document.querySelector(".loadingScreen")
+setTimeout(()=>{
+    loadingScreen.classList.add("hidden")
+},2000)
+
+let subsForm = document.querySelector(".subscribeFooter")
+let subsEmail = document.querySelector(".subscribeEmail")
+subsForm.onsubmit = ()=>{
+    return subsFormBtn()
+}
+
+function subsFormBtn(){
+    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(correctEmailRE.test(subsEmail.value)){
+        return true
+    }else{
+        return false
+    }
+}
+
 
 mobileMenuBar.addEventListener("click",mobileMenuToggle)
 function mobileMenuToggle(){
@@ -23,11 +45,12 @@ function mobileMenuToggle(){
 }
 
 window.addEventListener("scroll",()=>{
-    // console.log(window.scrollY)
-    if(window.scrollY>40){
-        navbar.style.backgroundColor = "#5219a2"
+    if(window.scrollY>200){
+        // navbar.style.backgroundColor = "#fff"
+        navbar.classList.add("scrollNav")
     }else{
-        navbar.style.backgroundColor = "#5219a2b4"
+        // navbar.style.backgroundColor = "none"
+        navbar.classList.remove("scrollNav")
 
     }
 })
@@ -303,10 +326,10 @@ nextBtn.addEventListener("click",()=>{
 function selectVideo(){
     videoLists.forEach((selectedVideo,index)=>{
         if(index==currentVideo){
-            selectedVideo.style.backgroundColor = "#21251D"
+            selectedVideo.style.backgroundColor = "rgb(93 114 147)"
         }else if(index != currentVideo){
             console.log(index)
-            videoLists[index].style.backgroundColor = "#202020"
+            videoLists[index].style.backgroundColor = "#536580"
     
         }
         selectedVideo.addEventListener("click",()=>{
@@ -318,9 +341,9 @@ function selectVideo(){
 }
 
 document.addEventListener("keydown",(event)=>{
-    if(event.keyCode ==32){
-        playPause()
-    }
+    // if(event.keyCode ==32){
+    //     playPause()
+    // }
     if(event.keyCode==39){
         console.log("qwert")
         video.currentTime +=10
@@ -343,3 +366,111 @@ function pictureİnPicture(){
 
 fullScreenBtn.addEventListener("click",fullScreen)
 PiPBtn.addEventListener("click",pictureİnPicture)
+
+let comments = document.querySelector(".comments")
+let savedComments = JSON.parse(localStorage.getItem("savedComments"))
+
+let savedCommentsDates
+let commentImport 
+let commentBox = document.querySelector(".commentBox")
+let sendComment = document.querySelector(".sendComment")
+
+if(savedComments == null){
+    savedComments = {}
+    commentImport = false
+    
+}else{
+    commentImport = true
+    savedCommentsDates = Object.keys(savedComments)
+}
+
+function generateComment(username,time,content){
+    let comment = document.createElement("div")
+    let commentHeader = document.createElement("div")
+    let commentHeaderName = document.createElement("div")
+    let commentHeaderTime = document.createElement("div")
+    let commentContent = document.createElement("div")
+
+    
+
+    commentHeader.appendChild(commentHeaderName)
+    commentHeader.appendChild(commentHeaderTime)
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+    comments.appendChild(comment)
+
+
+
+    commentHeaderName.innerHTML = username
+    commentHeaderTime.innerHTML = time
+    commentContent.innerHTML = content
+    comment.classList.add("comment")
+    commentHeader.classList.add("comment_header")
+    commentHeaderName.classList.add("comment_header_name")
+    commentHeaderTime.classList.add("comment_header_time")
+    commentContent.classList.add("comment_content")
+
+
+
+
+
+}
+
+// generateComment("Elvin Murshudlu","12:56","salam")
+
+sendComment.addEventListener("click",(e)=>{
+    if((commentBox.value).trim() =="" ){
+        console.log("Comment yaz;n")
+    }else{
+        console.log("working")
+        savedComments[Date.now()]={"username":registeredAccounts[loggedAccoundID].name + " " + registeredAccounts[loggedAccoundID].surname,"comment":(commentBox.value).trim()} 
+        localStorage.setItem("savedComments",JSON.stringify(savedComments))
+        let newComment = JSON.parse(localStorage.getItem("savedComments"))
+        let keys = Object.keys(newComment)
+        let latestComment = newComment[keys[keys.length-1]]
+
+        console.log(latestComment,keys[keys.length-1])
+        importCommets(latestComment["username"],keys[keys.length-1],latestComment["comment"])
+        commentBox.value =""
+    }
+})
+
+function commentLoad(){
+    console.log(savedComments)
+    if(Object.keys(savedComments) ==0){
+        savedComments = {}
+        commentImport = false
+        
+    }else{
+        commentImport = true
+        savedCommentsDates = Object.keys(savedComments)
+    }
+    console.log(commentImport,"importable")
+    if(commentImport){
+        savedComments = JSON.parse(localStorage.getItem("savedComments"))
+        
+
+        savedCommentsDates = Object.keys(savedComments)
+        for(let a of savedCommentsDates){
+            let date = a
+            let commenttor =  savedComments[a].username
+            let msg = savedComments[a].comment
+            importCommets(commenttor,date,msg)
+        }
+    }
+}
+
+function importCommets(user,time,msg){
+    console.log("Time",time)
+        let currentCommentTimeDivided = ((new Date(+time)).toISOString()).split("T")
+        let currentCommentTimeYear = currentCommentTimeDivided[0]
+        let currentCommentTimeDay = currentCommentTimeDivided[1].split(".")[0]
+
+        let currentCommentTime= currentCommentTimeYear+ " "+ currentCommentTimeDay
+        let username = user
+        let content = msg
+        generateComment(username,currentCommentTime,content)
+}
+
+    commentLoad()
+ 

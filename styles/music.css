@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #222831;
   width: 100%;
   height: 100%;
 }
@@ -146,14 +146,15 @@ body main .dataControls .filterBtn {
   border-radius: 7px;
   cursor: pointer;
   transition: 0.3s;
+  background-color: #f3acfd;
 }
 body main .dataControls .filterBtn:hover {
-  background-color: #181818;
+  background-color: #E3207B;
   color: white;
 }
 body main .musicBox {
   width: 70%;
-  background-color: #151515;
+  background-color: #272d36;
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
@@ -164,9 +165,11 @@ body main .musicBox {
 body main .musicBox .music {
   width: 150px;
   height: 200px;
+  overflow: hidden;
   background-color: #181818;
   border-radius: 10px;
   cursor: pointer;
+  position: relative;
 }
 body main .musicBox .music .musicImg {
   width: 100%;
@@ -184,8 +187,29 @@ body main .musicBox .music .musicContent {
   align-items: center;
   color: white;
 }
+body main .musicBox .music .likerHover {
+  transition: 0.3s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.367);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  left: 0;
+  bottom: -200px;
+  display: flex;
+  justify-content: end;
+  font-size: 35px;
+  padding: 10px;
+  color: white;
+}
+body main .musicBox .music:hover .likerHover {
+  bottom: 0;
+}
 
 .selected {
-  background-color: #181818;
+  background-color: #E934FF;
+  border: 0;
   color: white;
+  transform: scale(1.03);
 }/*# sourceMappingURL=music.css.map */

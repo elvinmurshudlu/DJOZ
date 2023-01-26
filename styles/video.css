@@ -1,34 +1,41 @@
-body main {
-  width: 100%;
-}
-body main * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body main {
+  width: 100%;
 }
 body main i {
   cursor: pointer;
 }
 body main .container {
   width: 100%;
-  height: 100vh;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0f0f0f;
+  background-color: #546176;
 }
 body main .container .videoPlayer {
-  height: 400px;
   display: flex;
+  flex-direction: column;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
 body main .container .videoPlayer .video {
   width: 700px;
-  height: 100%;
+  height: 400px;
   overflow: hidden;
   position: relative;
+}
+@media (max-width: 575px) {
+  body main .container .videoPlayer .video {
+    width: 100% !important;
+    height: auto;
+  }
 }
 body main .container .videoPlayer .video video {
   width: 100%;
@@ -126,19 +133,21 @@ body main .container .videoPlayer .video .videoControl .controls .screenType i {
   color: white;
 }
 body main .container .videoPlayer .videoList {
-  width: 300px;
+  width: 100%;
   height: 100%;
-  background-color: #202020;
+  background-color: #536580;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 10px;
   overflow: hidden;
   row-gap: 10px;
 }
 body main .container .videoPlayer .videoList .list {
-  width: 280px;
+  width: 100%;
   height: 100px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   -moz-column-gap: 10px;
@@ -157,6 +166,83 @@ body main .container .videoPlayer .videoList .list_title {
   width: 150px;
   height: 60px;
   color: white;
+}
+body main .container .comments::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: white;
+}
+body main .container .comments::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+body main .container .comments::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: blue;
+}
+body main .container .comments {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+body main .container .comments .write_comment {
+  width: 100%;
+  display: flex;
+}
+body main .container .comments .write_comment input {
+  width: 85%;
+  border: 0;
+  padding: 10px 10px;
+  border-bottom: 1px solid black;
+}
+body main .container .comments .write_comment input::-moz-placeholder {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+body main .container .comments .write_comment input:-ms-input-placeholder {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+body main .container .comments .write_comment input::placeholder {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+body main .container .comments .write_comment .sendComment {
+  padding: 10px 5px;
+  width: 15%;
+  background-color: #E3207B;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+body main .container .comments .comment {
+  color: white;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 10px 20px;
+}
+body main .container .comments .comment_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+body main .container .comments .comment_header_name {
+  color: red;
+  font-size: 15px;
+}
+body main .container .comments .comment_header_time {
+  color: grey;
+}
+body main .container .comments .comment_content {
+  width: 100%;
+  padding-left: 15px;
+  color: black;
+  max-height: 40px;
 }
 body main .showVideoControl {
   bottom: 0 !important;

@@ -111,6 +111,21 @@ function invalidElement(element,condition=true,msg="daxil edilməyib!"){
     
 }
 
+let subsForm = document.querySelector(".subscribeFooter")
+let subsEmail = document.querySelector(".subscribeEmail")
+
+subsForm.onsubmit = ()=>{
+    return subsFormBtn()
+}
+
+function subsFormBtn(){
+    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(correctEmailRE.test(subsEmail.value)){
+        return true
+    }else{
+        return false
+    }
+}
 
 // function formSubmit(form,registerRequest = false){
 //     let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/    
@@ -246,6 +261,11 @@ function loginSubmit(){
     // return true
 
 }
+
+let loadingScreen = document.querySelector(".loadingScreen")
+setTimeout(()=>{
+    loadingScreen.classList.add("hidden")
+},2000)
 
 let registerName = document.querySelector("#nameRegister")
 let registerSurName = document.querySelector("#surnameRegister")

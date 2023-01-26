@@ -41,15 +41,23 @@ body {
   --contact--btn--color: #5C00CE;
   --contact--btn--content--color: white;
   --music--btn--color:#E934FF;
+  --contact--me--bg:white;
   width: 100%;
   scrollbar-color: red;
+}
+body #darkModeBtn {
+  width: 45px;
+  height: 45px;
+  border-radius: 100px;
+  border: 0;
+  color: black;
+  background: none;
 }
 body main {
   width: 100%;
 }
 body main .header {
   width: 100%;
-  background-image: url("/assets/header.jpg");
   height: 1040px;
   background-position: right;
   background-position: top;
@@ -60,47 +68,71 @@ body main .header {
   justify-content: center;
   align-items: center;
   color: var(--nav-font-color);
+  position: relative;
 }
 @media (max-width: 575px) {
   body main .header {
     height: 130vh;
   }
 }
-body main .header_text {
+body main .header .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  row-gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--nav-font-color);
+  background-color: rgba(0, 0, 0, 0.619);
+}
+body main .header .text_text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-body main .header_text_ {
+body main .header .text_text_ {
   font-size: 20px;
 }
-body main .header_text_main {
+body main .header .text_text_main {
   font-family: "Rock Salt", cursive;
   font-size: 60px;
   text-align: center;
 }
 @media (max-width: 1000px) {
-  body main .header_text_main {
+  body main .header .text_text_main {
     font-size: 40px;
   }
 }
-body main .header_text_title {
+body main .header .text_text_title {
   width: 600px;
   font-size: 18px;
   text-align: center;
 }
 @media (max-width: 1000px) {
-  body main .header_text_title {
+  body main .header .text_text_title {
     width: 400px;
   }
 }
 @media (max-width: 575px) {
-  body main .header_text_title {
+  body main .header .text_text_title {
     width: 100%;
   }
 }
-body main .header_button {
+body main .header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .header .header_button {
   width: 100px;
   height: 100px;
   background-color: red;
@@ -111,7 +143,7 @@ body main .header_button {
   align-items: center;
   cursor: pointer;
 }
-body main .header_button-round {
+body main .header .header_button-round {
   width: 65%;
   height: 65%;
   background-color: white;
@@ -120,17 +152,19 @@ body main .header_button-round {
   justify-content: center;
   align-items: center;
 }
-body main .header_button-round i {
+body main .header .header_button-round i {
   color: #5C00CE;
   font-size: 30px;
 }
 body main .slider {
   width: 100%;
-  height: 660px;
+  background-image: url("/assets/homeSliderBg2.jpg");
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
+  padding: 60px 0;
 }
 @media (max-width: 575px) {
   body main .slider {
@@ -165,6 +199,7 @@ body main .slider-main_header {
   font-size: 40px;
   font-family: "Rajdhani", sans-serif;
   letter-spacing: 1px;
+  color: white;
 }
 body main .slider-main_slides {
   width: 100%;
@@ -174,24 +209,40 @@ body main .slider-main_slides {
 }
 body main .slider-main_slides-slide {
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   width: 370px;
   height: 100%;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.266);
+  border-radius: 6px;
   box-shadow: 0px 0px 9px 1px;
   transition: 1s;
 }
 body main .slider-main_slides-slide .slide_img {
   width: 100%;
+  height: 70%;
+  position: relative;
 }
 body main .slider-main_slides-slide .slide_img img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .slider-main_slides-slide .slide_img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.067);
 }
 body main .slider-main_slides-slide .slide_footer {
   width: 100%;
   height: 30%;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
   row-gap: 15px;
   justify-content: center;
   align-items: center;
@@ -206,6 +257,7 @@ body main .contactMe {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: var(--);
 }
 @media (max-width: 1000px) {
   body main .contactMe {
@@ -303,6 +355,7 @@ body main .offers .offers_offerBoxes {
   }
 }
 body main .offers .offers_offerBoxes .box {
+  transition: 0.4s;
   width: 100%;
   height: 100%;
   background-color: #5C00CE;
@@ -328,13 +381,18 @@ body main .offers .offers_offerBoxes .box_header {
     padding-top: 30px;
   }
 }
+body main .offers .offers_offerBoxes .box:hover {
+  border: 1px solid black;
+  transform: scale(1.02);
+  color: orange;
+}
 body main .offers .offers_offerBoxes .boxColor {
   background-color: #5400BC;
 }
 body main .music {
+  margin-top: 40px;
   width: 100%;
   height: 700px;
-  background-color: red;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -464,8 +522,9 @@ body main .music .musics {
   flex-direction: column;
   row-gap: 30px;
   justify-content: end;
-  background-color: #0F0923;
-  color: white;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(233, 181, 148) 100%);
+  color: rgb(0, 0, 0);
 }
 body main .music .musics_header {
   font-size: 25px;
@@ -485,6 +544,9 @@ body main .music .musics_box {
   flex-direction: column;
   display: flex;
 }
+body main .music .musics_box .selectedMusic {
+  background-color: rgb(162, 160, 160) !important;
+}
 body main .music .musics_box .musicLine {
   width: 100%;
   height: 90px;
@@ -494,6 +556,7 @@ body main .music .musics_box .musicLine {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: black;
 }
 body main .music .musics_box .musicLine_name {
   display: flex;
@@ -503,10 +566,10 @@ body main .music .musics_box .musicLine_name {
   letter-spacing: 1px;
 }
 body main .music .musics_box .musicLine_name .musicName {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 body main .music .musics_box .musicLine_name .musicAuthor {
-  color: grey;
+  color: rgb(194, 194, 194);
 }
 body main .music .musics_box .musicLine_social {
   display: flex;
@@ -519,7 +582,7 @@ body main .music .musics_box .musicLine_social .logos {
        column-gap: 10px;
 }
 body main .music .musics_box .musicLine:hover {
-  background-color: #262037;
+  background-color: rgb(186, 184, 184) !important;
 }
 body main .music .musics_box .musicLine:hover .logos {
   display: flex !important;
@@ -529,17 +592,23 @@ body main .youtubeFeed {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(233, 181, 148) 100%);
 }
 body main .youtubeFeed_header {
   display: grid;
   place-content: center;
   font-size: 50px;
   height: 300px;
+  letter-spacing: 5px;
+  color: white;
+  font-family: "Aboreto", cursive;
 }
 @media (max-width: 1000px) {
   body main .youtubeFeed_header {
     height: 80px;
     font-size: 40px;
+    letter-spacing: 0;
   }
 }
 body main .youtubeFeed .videos {
@@ -555,6 +624,9 @@ body main .youtubeFeed .videos {
 }
 body main .youtubeFeed .videos-video {
   width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid white;
   transition: 0.4s;
 }
 @media (max-width: 1000px) {
@@ -588,6 +660,7 @@ body main .youtubeFeed .videos-video_content {
   height: 30%;
   display: grid;
   place-content: center;
+  font-family: "Aboreto", cursive;
   padding: 20px;
   font-size: 27px;
 }
@@ -614,7 +687,8 @@ body main .videoPopUp {
 body main .videoPopUp .openedVideo {
   width: 650px;
   height: 600px;
-  background-color: #fff;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(255, 7, 7) 100%);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -696,7 +770,7 @@ body main .videoPopUp .openedVideo_control .videoController .controll {
   transition: 0.2s;
 }
 body main .videoPopUp .openedVideo_control .videoController .controll:hover {
-  background-color: black;
+  background-color: rgb(255, 0, 0);
   color: white;
 }
 body main .videoPopUp .openedVideo_control .videoController .videoPlay {
@@ -709,88 +783,6 @@ body main .videoPopUp .openedVideo_control .videoTime {
   height: 20px;
   display: flex;
   justify-content: center;
-}
-body footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: url("/assets/footerBg.jpg");
-  background-position: center;
-  color: white;
-  height: 500px;
-  justify-content: center;
-  row-gap: 30px;
-}
-@media (max-width: 575px) {
-  body footer h1 {
-    font-size: 25px;
-  }
-}
-body footer .timer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 40px;
-}
-body footer .timer .time {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 70px;
-}
-@media (max-width: 575px) {
-  body footer .timer .time {
-    font-size: 40px;
-  }
-}
-body footer .timer .timeWord {
-  font-size: 20px;
-  font-weight: 100;
-}
-body footer button {
-  width: 180px;
-  height: 50px;
-  background-color: Blue;
-  color: white;
-  font-size: 19px;
-  border-radius: 10px;
-  border: 0;
-}
-body footer .socialSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  -moz-column-gap: 60px;
-       column-gap: 60px;
-}
-body footer .socialSection .phone {
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-}
-body footer .socialSection .phone li {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-}
-body footer .socialSection .phone li span:nth-child(1) {
-  color: grey;
-}
-body footer .socialSection .social {
-  display: flex;
-}
-body footer .socialSection-sendMail {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-body footer .socialSection-sendMail h2 {
-  font-size: 35px;
-  margin-bottom: 40px;
 }
 
 .hidden {

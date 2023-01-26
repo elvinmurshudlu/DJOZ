@@ -13,17 +13,67 @@
 html , body{
     width: 100%;
 }
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: white;
+}
 
+body::-webkit-scrollbar
+{   
+	
+    width: 8px;
+	background-color: #F5F5F5;
+} 
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: blue;
+    // outline: 1px solid slategrey;
+}
 
 body{
     --nav-bg-color:#5219a2b4;
+    --nav-bg-color-scroll:white;
+    --nav-bg-color:none;
     --nav-font-color:white;
     --contact--btn--color: #5C00CE;
     --contact--btn--content--color: white;
     --music--btn--color:#E934FF;
     width: 100%;
     scrollbar-color: red;
+    .loadingScreen{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .scrollNav{
+        transition: 1s;
+        background-color: var(--nav-bg-color-scroll) !important;
+        
+            a,i{
+                color: black!important;
+            }
+            .selectedPage{
+                border: 1px solid black!important;
+            }
+        
+    }
+
     nav{
+        transition: 1s;
         width: 100%;
         height: 120px;
         background-color: var(--nav-bg-color);
@@ -77,11 +127,25 @@ body{
             .menu{
                 ul{
                     display: flex;
-                    column-gap: 50px;
+                    column-gap: 20px;
                     font-size: 17px;
+                    .selectedPage{
+                        border: 1px solid #fdfdfd;
+                        transition: 1s;
+                        padding: 4px 15px;
+                        background-color: #ffffff30;
+                        color: black;
+                        border-radius: 5px;
+                    }
                     li{
                         // text-decoration: underline;
                         transition: 1s;
+                        padding: 4px 15px;
+
+                        a{
+                            
+                            text-transform: uppercase;
+                        }
     
                     }
                     li:hover{
@@ -148,8 +212,9 @@ body{
     
     
     }
+    
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }

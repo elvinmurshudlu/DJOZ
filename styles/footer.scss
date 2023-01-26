@@ -1,0 +1,104 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+    background-color: #222831;
+    padding: 50px 0;
+
+
+    .footerHeader{
+        font-size: 20px;
+        position: relative;
+        height: 30px;
+        color: white;
+    }
+    .footerHeader::before{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        width: 50px;
+        height: 4px;
+        border-radius: 10px;
+        background-color: #E3207B;
+
+    }
+
+    .footerAbout{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px
+        ;
+        color: #99947e95;
+        &-content{
+            max-width: 400px;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 1px;
+        }
+        form{
+            display: flex;
+            input{
+                padding: 15px;
+                font-size: 18px;
+                border: 1px solid white;
+                background-color: #222831;
+                color: white;
+            }
+            input[type=submit]{
+                background-color: #E3207B;
+            }
+            input::placeholder{
+                color: white;
+                letter-spacing: 1px;
+                
+            }
+        }
+    }
+    .footerNavigations{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px
+        ;
+        &-content{
+            display: flex;
+            column-gap: 40px;
+            ul{
+                li{
+                    line-height: 28px;
+                    a{
+                        font-size: 20px;
+                        letter-spacing: 1px;
+                        color: grey;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .watchLive{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px
+        ;
+        &-content{
+            width: 350px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .end{
+        width: 100%;
+        color: #99947e95;
+        text-align: center;
+        
+    }
+}

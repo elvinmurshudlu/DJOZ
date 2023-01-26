@@ -19,6 +19,7 @@ body {
   width: 100%;
 }
 body main {
+  background-image: url("/assets/homeSliderBg.jpg");
   width: 100%;
   padding-top: 120px;
   display: flex;
@@ -28,8 +29,10 @@ body main .loginRegister {
   width: 500px;
   min-height: 650px;
   padding-bottom: 40px;
-  background-color: #f8f8f8;
-  border: 0.6px solid rgb(177, 176, 176);
+  background-color: rgba(0, 0, 0, 0.303);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 1px solid yellow;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -68,7 +71,7 @@ body main .loginRegister_select .buttons button {
   outline: 0;
 }
 body main .loginRegister_select .buttons .buttonFocused {
-  background-color: white;
+  background-color: #E2DC20;
 }
 body main .loginRegister input {
   width: 100%;
@@ -92,8 +95,8 @@ body main .loginRegister .login {
   row-gap: 30px;
 }
 body main .loginRegister .login input[type=submit] {
-  background-color: #b6958b;
-  color: #eeeeee;
+  background-color: #E2DC20;
+  color: black;
   cursor: pointer;
 }
 body main .loginRegister .login input[type=submit]:hover {
@@ -110,9 +113,19 @@ body main .loginRegister .register {
 }
 body main .loginRegister .register span {
   width: 100%;
+  color: white;
 }
 body main .loginRegister .register .nameSurName {
   width: 49%;
+}
+body main .loginRegister .register input[type=submit] {
+  background-color: #E2DC20;
+  color: black;
+  cursor: pointer;
+}
+body main .loginRegister .register input[type=submit]:hover {
+  background-color: #eeeeee;
+  color: #b6958b;
 }
 
 .hidden {

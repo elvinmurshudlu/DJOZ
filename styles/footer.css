@@ -1,0 +1,101 @@
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 40px;
+  background-color: #222831;
+  padding: 50px 0;
+}
+footer .footerHeader {
+  font-size: 20px;
+  position: relative;
+  height: 30px;
+  color: white;
+}
+footer .footerHeader::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 50px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #E3207B;
+}
+footer .footerAbout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  color: rgba(153, 148, 126, 0.5843137255);
+}
+footer .footerAbout-content {
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+footer .footerAbout form {
+  display: flex;
+}
+footer .footerAbout form input {
+  padding: 15px;
+  font-size: 18px;
+  border: 1px solid white;
+  background-color: #222831;
+  color: white;
+}
+footer .footerAbout form input[type=submit] {
+  background-color: #E3207B;
+}
+footer .footerAbout form input::-moz-placeholder {
+  color: white;
+  letter-spacing: 1px;
+}
+footer .footerAbout form input:-ms-input-placeholder {
+  color: white;
+  letter-spacing: 1px;
+}
+footer .footerAbout form input::placeholder {
+  color: white;
+  letter-spacing: 1px;
+}
+footer .footerNavigations {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+footer .footerNavigations-content {
+  display: flex;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+footer .footerNavigations-content ul li {
+  line-height: 28px;
+}
+footer .footerNavigations-content ul li a {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: grey;
+}
+footer .watchLive {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+footer .watchLive-content {
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+footer .watchLive-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .end {
+  width: 100%;
+  color: rgba(153, 148, 126, 0.5843137255);
+  text-align: center;
+}/*# sourceMappingURL=footer.css.map */

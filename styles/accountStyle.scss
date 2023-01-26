@@ -28,6 +28,8 @@ body{
         flex-direction: column;
         align-items: center;
         row-gap: 10px;
+        background-color: #e0e0e0;
+        // justify-content: center;
         .profileButtons{
             width: 100%;
             display: flex;
@@ -35,35 +37,64 @@ body{
             column-gap: 10px;
             button{
                 padding: 5px 10px;
+                // background-color: red;
+                border: 1px solid #fdfdfd;
+                        transition: 1s;
+                        padding: 4px 15px;
+                        background-color: #00000030;
+                        color: rgb(255, 255, 255);
+                        border-radius: 5px;
                 
 
             }
         }
         .accountDetails{
-            width: 1000px;
-            height: 500px;
+            width: 70%;
+            min-height: 500px;
             // background-color: yellow;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid black;
+            flex-wrap: wrap;
+            // border: 1px solid black;
+            // border-radius: 10px;
             background-color: #f8f8f8;
+            background: #e0e0e0;
+  box-shadow:  -11px 11px 22px #bebebe, 11px -11px 22px #ffffff;
+            color: purple;
+            border-radius: 50px;
+            padding: 10px;
+            @include mobile{
+                width: 100%;
+            }
+
+            // background-color: #161B22;
             form{
                 display: flex;
                 // flex-wrap: wrap;
                 flex-direction: column;
+                
                 row-gap: 25px;
                 input:not([type=checkbox]){
                     width: 100%;
                     height: 35px;
-                    background-color: #fff;
-                    border: 0.5px solid grey;
+                    background-color: #e0e0e0;
+                    border: 0;
+                    // border: 0.5px solid orange;
                     outline: 0;
                     border-radius: 4px;
                     padding: 5px 10px;
                 }
+                input[type=submit]{
+                    border-bottom: 1px solid grey;
+                }
+                input[type=submit]:hover{
+                    border-bottom: 1px solid orange;
+                    color: white;
+                }
+
                 input[type=button]{
-                    background-color: #BA958B;
+                    background-color: #e0e0e0;
                     cursor: pointer;
                 }
                 #changeInfo{
@@ -78,7 +109,7 @@ body{
                         position: absolute;
                         left: 10px;
                         top: -12px;
-                        background: #f8f8f8;
+                        background: #e0e0e0;
                     }
                     
                 }
@@ -91,7 +122,7 @@ body{
             .profile{
                 width: 48%;
                 height: 92%;
-                border-right: 1px solid black;
+                // border-right: 1px solid black;
                 // display: flex;
                 // row-gap: 30px;
                 
@@ -110,13 +141,19 @@ body{
             }
         }
         .statistic{
-            width: 1000px;
-            height: 500px;
-            border: 1px solid black; 
+            width: 70%;
+            // height: 500px;
+            // border: 1px solid black; 
+            @include mobile{
+                width: 100%;
+            }
             .listenInformation{
                 width: 100%;
-                height: 40%;
+                height: 250px;
                 border: 1px solid black;
+                border-radius: 15px;
+                background-color: #161B22;
+                color: white;
                 display: flex;
                 .total{
                     width: 300px;
@@ -126,8 +163,17 @@ body{
                     align-items: center;
                     flex-direction: column;
                     row-gap: 10px;
+                    h1{
+                        @include mobile{
+                            font-size: 20px;
+                        }
+                    }
                     span{
                         font-size: 25px;
+                        @include mobile{
+                            font-size: 15px;
+                        }
+                        
                     }
                 }
                 .progressBars{
@@ -153,14 +199,14 @@ body{
                         .progressBar{
                             width: 190px;
                             height: 6px;
-                            background-color: red;
+                            background-color: grey;
                             border-radius: 10px;
                             position: relative;
                             .bar{
                                 position: absolute;
                                 width: 0% ;
                                 height: 100%;
-                                background-color: blue;
+                                background-color: black;
                                 transition: 5s;
                             }
                             .percentage{
@@ -249,3 +295,16 @@ body{
 .hidden{
     display: none !important;
 }
+
+.genderPosition{
+    padding-top: 5px;
+    padding-left: 15px;
+    select{
+        background: #e0e0e0;
+        border: 0;
+    }select:focus{
+        outline: 0;
+    }
+}
+
+

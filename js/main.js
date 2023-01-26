@@ -222,10 +222,13 @@ function load(currentMsc=0){
 
         if(index==currentMsc){
             social.classList.remove("hidden")
-            music.style.backgroundColor = "#262037"
+            music.classList.add("selectedMusic")
+            // music.style.backgroundColor = "#262037"
         }else{            
-            music.style.backgroundColor = "#0F0923"
+            // music.style.backgroundColor = "#0F0923"
             social.classList.add("hidden") 
+            music.classList.remove("selectedMusic")
+
 
         }
     })
@@ -250,9 +253,11 @@ musicLists.forEach((music,index)=>{
 
 window.addEventListener("scroll",()=>{
     if(window.scrollY>200){
-        navbar.style.backgroundColor = "#5219a2"
+        // navbar.style.backgroundColor = "#fff"
+        navbar.classList.add("scrollNav")
     }else{
-        navbar.style.backgroundColor = "#5219a2b4"
+        // navbar.style.backgroundColor = "none"
+        navbar.classList.remove("scrollNav")
 
     }
 })
@@ -483,56 +488,56 @@ videoMovementArea.addEventListener("click",(e)=>{
     
 })
 
-let endDate = new Date('February 23, 2023');
-let daysTime = document.querySelector(".days").children[0]
-let hoursTime = document.querySelector(".hours").children[0]
-let munitesTime = document.querySelector(".minutes").children[0]
-let secondsTime = document.querySelector(".seconds").children[0]
+// let endDate = new Date('February 23, 2023');
+// let daysTime = document.querySelector(".days").children[0]
+// let hoursTime = document.querySelector(".hours").children[0]
+// let munitesTime = document.querySelector(".minutes").children[0]
+// let secondsTime = document.querySelector(".seconds").children[0]
 
 
-// Make the timer function update every second
-setInterval(function(){
-  // Calculate the remaining time
-  let currentTime = new Date();
-  let secondsRemaining = (endDate - currentTime) / 1000;
-  let days = Math.floor(secondsRemaining / 86400);
-  let hours = Math.floor((secondsRemaining % 86400) / 3600);
-  let minutes = Math.floor(((secondsRemaining % 86400) % 3600) / 60);
-  let seconds = Math.floor(((secondsRemaining % 86400) % 3600) % 60);
-  if(days<10){
-    days = "0"+days
-  }
-  if(hours<10){
-    hours = "0"+hours
-  }
-  if(minutes<10){
-    minutes = "0"+minutes
-  }
-  if(seconds<10){
-    seconds = "0"+seconds
-  }
-  daysTime.innerText = days
-  hoursTime.innerText = hours
-  munitesTime.innerText = minutes
-  secondsTime.innerText = seconds
+// // Make the timer function update every second
+// setInterval(function(){
+//   // Calculate the remaining time
+//   let currentTime = new Date();
+//   let secondsRemaining = (endDate - currentTime) / 1000;
+//   let days = Math.floor(secondsRemaining / 86400);
+//   let hours = Math.floor((secondsRemaining % 86400) / 3600);
+//   let minutes = Math.floor(((secondsRemaining % 86400) % 3600) / 60);
+//   let seconds = Math.floor(((secondsRemaining % 86400) % 3600) % 60);
+//   if(days<10){
+//     days = "0"+days
+//   }
+//   if(hours<10){
+//     hours = "0"+hours
+//   }
+//   if(minutes<10){
+//     minutes = "0"+minutes
+//   }
+//   if(seconds<10){
+//     seconds = "0"+seconds
+//   }
+//   daysTime.innerText = days
+//   hoursTime.innerText = hours
+//   munitesTime.innerText = minutes
+//   secondsTime.innerText = seconds
 
-},1000)
+// },1000)
 
-let targetMail = document.querySelector(".targetMail")
-let sendmeMailForm = document.querySelector(".sendMeMail")
-let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ 
+// let targetMail = document.querySelector(".targetMail")
+// let sendmeMailForm = document.querySelector(".sendMeMail")
+// let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ 
 
 
 
-sendmeMailForm.onsubmit = ()=>{
-    if(correctEmailRE.test(targetMail.value)){
-        return true
-    }
-    else{
-        // console.log("tar")
-        return false
-    }
-}
+// sendmeMailForm.onsubmit = ()=>{
+//     if(correctEmailRE.test(targetMail.value)){
+//         return true
+//     }
+//     else{
+//         // console.log("tar")
+//         return false
+//     }
+// }
 
 
 
@@ -564,3 +569,35 @@ sendmeMailForm.onsubmit = ()=>{
 // }
 
 // test()
+
+let loadingScreen = document.querySelector(".loadingScreen")
+setTimeout(()=>{
+    loadingScreen.classList.add("hidden")
+},2000)
+
+let darkModeBtn = document.querySelector("#darkModeBtn")
+let headerVideo = document.querySelector("#headerVideo")
+let sliderİmg = document.querySelector("#sliderİmg")
+
+darkModeBtn.addEventListener("click",()=>{
+    // console.log("sdkfjnsldfn")
+    // headerVideo.src = "./videos/homeMainLightMode.mp4"
+    headerVideo.src = "./videos/homeHeader.mp4"
+   sliderİmg.style.background = "url('./assets/homeSliderBg.jpg')"
+})
+
+let subsForm = document.querySelector(".subscribeFooter")
+let subsEmail = document.querySelector(".subscribeEmail")
+
+subsForm.onsubmit = ()=>{
+    return subsFormBtn()
+}
+
+function subsFormBtn(){
+    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(correctEmailRE.test(subsEmail.value)){
+        return true
+    }else{
+        return false
+    }
+}

@@ -31,15 +31,15 @@ function mobileMenuToggle(){
     }
 }
 
-window.addEventListener("scroll",()=>{
-    // console.log(window.scrollY)
-    if(window.scrollY>40){
-        navbar.style.backgroundColor = "#5219a2"
-    }else{
-        navbar.style.backgroundColor = "#5219a2b4"
+// window.addEventListener("scroll",()=>{
+//     // console.log(window.scrollY)
+//     if(window.scrollY>40){
+//         navbar.style.backgroundColor = "#5219a2"
+//     }else{
+//         navbar.style.backgroundColor = "#5219a2b4"
 
-    }
-})
+//     }
+// })
 
 
 let isLogged = localStorage.getItem("isLogged")
@@ -107,6 +107,9 @@ function musicGenerate(artist,song,type,musicSrc,id,coverImg){
     let musicContent = document.createElement("div")
     let authorName = document.createElement("div")
     let musicName = document.createElement("div")
+    let likerHover = document.createElement("div")
+    likerHover.classList.add("likerHover")
+    likerHover.innerHTML ='<i class="fa-solid fa-heart"></i>'
 
     music.setAttribute("data-author",artist)
     music.setAttribute("data-music",song)
@@ -118,6 +121,8 @@ function musicGenerate(artist,song,type,musicSrc,id,coverImg){
     musicImg.appendChild(img)
     music.appendChild(musicImg)
     music.appendChild(musicContent)
+    music.appendChild(likerHover)
+
 
     musicContent.appendChild(authorName)
     musicContent.appendChild(musicName)
@@ -221,7 +226,7 @@ let music = [
     {musicName:"Fırtınadayım",
     musicAuthor:"Mabel Matiz",
     musicSrc:"./music/Mabel Matiz - Fırtınadayım.mp3"
-    ,type:"love",
+    ,type:"pop",
         id:"mabelMatiz"
         ,
         coverImg:"./musicCover/mabelmatiz.jpg"
@@ -230,7 +235,7 @@ let music = [
         musicName:"Gel",
         musicAuthor:"Mabel Matiz",
         musicSrc:"./music/Mabel Matiz - Gel.mp3"
-        ,type:"love",
+        ,type:"pop",
         id:"mabelMatiz"
         ,
         coverImg:"./musicCover/mabelmatiz.jpg"
@@ -239,7 +244,7 @@ let music = [
         musicName:"Öyle kolaysa",
         musicAuthor:"Mabel Matiz",
         musicSrc:"./music/Mabel Matiz - Öyle Kolaysa.mp3"
-        ,type:"love",
+        ,type:"pop",
         id:"mabelMatiz"
         ,
         coverImg:"./musicCover/mabelmatiz.jpg"
@@ -249,7 +254,7 @@ let music = [
     {musicName:"Kül",
     musicAuthor:"Cem Adrian",
     musicSrc:"./music/Cem Adrian & Mark Eliyahu - KÜL.mp3"
-    ,type:"love",
+    ,type:"pop",
         id:"cemAdrian"
         ,
         coverImg:"./musicCover/cemadrian.jpg"
@@ -257,7 +262,7 @@ let music = [
         musicName:"ince Buz üstünde yürüyorum",
         musicAuthor:"Cem Adrian",
         musicSrc:"./music/Cem Adrian & Şebnem Ferah - İnce Buz Üstünde Yürüyorum (Official Audio).mp3"
-        ,type:"love",
+        ,type:"pop",
         id:"cemAdrian"
         ,
         coverImg:"./musicCover/cemadrian.jpg"
@@ -266,7 +271,7 @@ let music = [
         musicName:"Derinlerde",
         musicAuthor:"Cem Adrian",
         musicSrc:"./music/Mark Eliyahu & Cem Adrian - Derinlerde.mp3"
-        ,type:"love",
+        ,type:"pop",
         id:"cemAdrian"
         ,
         coverImg:"./musicCover/cemadrian.jpg"
@@ -314,15 +319,21 @@ for(let a = 0;a<music.length;a++){
 allMusic = document.querySelectorAll(".music")
 
 allMusic.forEach((music,index)=>{
-    music.addEventListener('click',()=>{
+    music.children[2].children[0].addEventListener('click',()=>{
+    console.log(music.children[2].children[0])
+
+        console.log("Index")
         likedMusicTotalData = JSON.parse(localStorage.getItem("likedMusic"))
         if(likedMusicTotalData==null){
             likedMusicTotalData = {}
         }
         if(likedMusic.includes(index)){
             likedMusic.splice(likedMusic.indexOf(index),1)
+            music.children[2].children[0].style.color = "white"
         }else{
             likedMusic.push(index)
+            music.children[2].children[0].style.color = "red"
+
         }
         
         console.log(likedMusic)
@@ -472,13 +483,14 @@ load()
 
 window.addEventListener("scroll",()=>{
     if(window.scrollY>200){
-        navbar.style.backgroundColor = "#5219a2"
+        // navbar.style.backgroundColor = "#fff"
+        navbar.classList.add("scrollNav")
     }else{
-        navbar.style.backgroundColor = "#5219a2b4"
+        // navbar.style.backgroundColor = "none"
+        navbar.classList.remove("scrollNav")
 
     }
 })
-
 function nextMusicFunc(){
     // console.log(moreListeningMusicTypeDuration/60)
     currentMusic++
@@ -507,20 +519,35 @@ function prevMusicFunc(){
 nextMusic.addEventListener("click",nextMusicFunc)
 prevMusic.addEventListener("click",prevMusicFunc)
 
+let loadingScreen = document.querySelector(".loadingScreen")
+setTimeout(()=>{
+    loadingScreen.classList.add("hidden")
+},2000)
 
 
-
-mainMusic.addEventListener("timeupdate",()=>{    
+mainMusic.addEventListener("timeupdate",()=>{ 
+    if(mainMusic.currentTime-moreListeningMusicTypeDuration>=1){
+        moreListeningMusicTypeDuration+=0.3
+    }else{
     moreListeningMusicTypeDuration = mainMusic.currentTime
+        
+    }
+    
+
+    
+    
+    
+    
     let percentage = +(mainMusic.currentTime) / +(mainMusic.duration)
     musicProgressBar.style.width = `${percentage*100}%`
     if(mainMusic.ended){
         
         nextMusicFunc()
     }
-         if(isLogged){
-            moreListeningMusicTypeDuration = mainMusic.currentTime
-         }
+        //  if(isLogged){
+        //     moreListeningMusicTypeDuration = mainMusic.currentTime
+            
+        //  }
         // moreListenedSaver(mainMusic,moreListeningMusicTypeDuration)
 
         let minute = Math.floor(mainMusic.currentTime/60)
@@ -627,4 +654,17 @@ filterBtns.forEach(filterBtn=>{
     })
 })
 
+let subsForm = document.querySelector(".subscribeFooter")
+let subsEmail = document.querySelector(".subscribeEmail")
+subsForm.onsubmit = ()=>{
+    return subsFormBtn()
+}
 
+function subsFormBtn(){
+    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(correctEmailRE.test(subsEmail.value)){
+        return true
+    }else{
+        return false
+    }
+}

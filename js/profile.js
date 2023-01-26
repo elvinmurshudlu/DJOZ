@@ -55,7 +55,26 @@ profileBtns.forEach((profileBtn)=>{
         })
     })
 })
+let loadingScreen = document.querySelector(".loadingScreen")
+setTimeout(()=>{
+    loadingScreen.classList.add("hidden")
+},2000)
 
+let subsForm = document.querySelector(".subscribeFooter")
+let subsEmail = document.querySelector(".subscribeEmail")
+
+subsForm.onsubmit = ()=>{
+    return subsFormBtn()
+}
+
+function subsFormBtn(){
+    let correctEmailRE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(correctEmailRE.test(subsEmail.value)){
+        return true
+    }else{
+        return false
+    }
+}
 
 
 mobileMenuBar.addEventListener("click",mobileMenuToggle)
@@ -71,11 +90,12 @@ function mobileMenuToggle(){
 }
 
 window.addEventListener("scroll",()=>{
-    // console.log(window.scrollY)
-    if(window.scrollY>40){
-        navbar.style.backgroundColor = "#5219a2"
+    if(window.scrollY>200){
+        // navbar.style.backgroundColor = "#fff"
+        navbar.classList.add("scrollNav")
     }else{
-        navbar.style.backgroundColor = "#5219a2b4"
+        // navbar.style.backgroundColor = "none"
+        navbar.classList.remove("scrollNav")
 
     }
 })
@@ -514,7 +534,7 @@ function generateLikedMusics(artist,song,type,musicSrc,id,coverImg){
 if(addLike){
     for(let a = 0;a<likedMusic.length;a++){
         let musicOne = music[likedMusic[a]]
-        console.log(musicOne)
+        // console.log(musicOne)
         
         generateLikedMusics(musicOne.musicAuthor,musicOne.musicName,musicOne.type, musicOne.musicSrc,musicOne.id,musicOne.coverImg)
     }
@@ -522,3 +542,6 @@ if(addLike){
 }
 
 
+
+// let day = Date.now()
+// console.log(new Date(day))

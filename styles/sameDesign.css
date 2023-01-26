@@ -10,8 +10,27 @@ html, body {
   width: 100%;
 }
 
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: blue;
+}
+
 body {
   --nav-bg-color:#5219a2b4;
+  --nav-bg-color-scroll:white;
+  --nav-bg-color:none;
   --nav-font-color:white;
   --contact--btn--color: #5C00CE;
   --contact--btn--content--color: white;
@@ -19,7 +38,30 @@ body {
   width: 100%;
   scrollbar-color: red;
 }
+body .loadingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scrollNav {
+  transition: 1s;
+  background-color: var(--nav-bg-color-scroll) !important;
+}
+body .scrollNav a, body .scrollNav i {
+  color: black !important;
+}
+body .scrollNav .selectedPage {
+  border: 1px solid black !important;
+}
 body nav {
+  transition: 1s;
   width: 100%;
   height: 120px;
   background-color: var(--nav-bg-color);
@@ -75,12 +117,24 @@ body nav .desktop .menuSocial {
 }
 body nav .desktop .menuSocial .menu ul {
   display: flex;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   font-size: 17px;
+}
+body nav .desktop .menuSocial .menu ul .selectedPage {
+  border: 1px solid #fdfdfd;
+  transition: 1s;
+  padding: 4px 15px;
+  background-color: rgba(255, 255, 255, 0.1882352941);
+  color: black;
+  border-radius: 5px;
 }
 body nav .desktop .menuSocial .menu ul li {
   transition: 1s;
+  padding: 4px 15px;
+}
+body nav .desktop .menuSocial .menu ul li a {
+  text-transform: uppercase;
 }
 body nav .desktop .menuSocial .menu ul li:hover {
   border-bottom: 1px solid white;
@@ -132,5 +186,5 @@ body nav .mobileMenu ul li li:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }/*# sourceMappingURL=sameDesign.css.map */

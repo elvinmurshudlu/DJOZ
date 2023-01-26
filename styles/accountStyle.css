@@ -22,6 +22,7 @@ body main {
   flex-direction: column;
   align-items: center;
   row-gap: 10px;
+  background-color: #e0e0e0;
 }
 body main .profileButtons {
   width: 100%;
@@ -32,15 +33,31 @@ body main .profileButtons {
 }
 body main .profileButtons button {
   padding: 5px 10px;
+  border: 1px solid #fdfdfd;
+  transition: 1s;
+  padding: 4px 15px;
+  background-color: rgba(0, 0, 0, 0.1882352941);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
 }
 body main .accountDetails {
-  width: 1000px;
-  height: 500px;
+  width: 70%;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  flex-wrap: wrap;
   background-color: #f8f8f8;
+  background: #e0e0e0;
+  box-shadow: -11px 11px 22px #bebebe, 11px -11px 22px #ffffff;
+  color: purple;
+  border-radius: 50px;
+  padding: 10px;
+}
+@media (max-width: 575px) {
+  body main .accountDetails {
+    width: 100%;
+  }
 }
 body main .accountDetails form {
   display: flex;
@@ -50,14 +67,21 @@ body main .accountDetails form {
 body main .accountDetails form input:not([type=checkbox]) {
   width: 100%;
   height: 35px;
-  background-color: #fff;
-  border: 0.5px solid grey;
+  background-color: #e0e0e0;
+  border: 0;
   outline: 0;
   border-radius: 4px;
   padding: 5px 10px;
 }
+body main .accountDetails form input[type=submit] {
+  border-bottom: 1px solid grey;
+}
+body main .accountDetails form input[type=submit]:hover {
+  border-bottom: 1px solid orange;
+  color: white;
+}
 body main .accountDetails form input[type=button] {
-  background-color: #BA958B;
+  background-color: #e0e0e0;
   cursor: pointer;
 }
 body main .accountDetails form #changeInfo {
@@ -72,7 +96,7 @@ body main .accountDetails form span label {
   position: absolute;
   left: 10px;
   top: -12px;
-  background: #f8f8f8;
+  background: #e0e0e0;
 }
 body main .accountDetails form .gender {
   width: 40%;
@@ -80,7 +104,6 @@ body main .accountDetails form .gender {
 body main .accountDetails .profile {
   width: 48%;
   height: 92%;
-  border-right: 1px solid black;
 }
 body main .accountDetails .passwordReset {
   width: 48%;
@@ -92,14 +115,20 @@ body main .accountDetails .passwordReset {
   justify-self: center;
 }
 body main .statistic {
-  width: 1000px;
-  height: 500px;
-  border: 1px solid black;
+  width: 70%;
+}
+@media (max-width: 575px) {
+  body main .statistic {
+    width: 100%;
+  }
 }
 body main .statistic .listenInformation {
   width: 100%;
-  height: 40%;
+  height: 250px;
   border: 1px solid black;
+  border-radius: 15px;
+  background-color: #161B22;
+  color: white;
   display: flex;
 }
 body main .statistic .listenInformation .total {
@@ -111,8 +140,18 @@ body main .statistic .listenInformation .total {
   flex-direction: column;
   row-gap: 10px;
 }
+@media (max-width: 575px) {
+  body main .statistic .listenInformation .total h1 {
+    font-size: 20px;
+  }
+}
 body main .statistic .listenInformation .total span {
   font-size: 25px;
+}
+@media (max-width: 575px) {
+  body main .statistic .listenInformation .total span {
+    font-size: 15px;
+  }
 }
 body main .statistic .listenInformation .progressBars {
   width: 700px;
@@ -136,7 +175,7 @@ body main .statistic .listenInformation .progressBars-nums .time {
 body main .statistic .listenInformation .progressBars-nums .progressBar {
   width: 190px;
   height: 6px;
-  background-color: red;
+  background-color: grey;
   border-radius: 10px;
   position: relative;
 }
@@ -144,7 +183,7 @@ body main .statistic .listenInformation .progressBars-nums .progressBar .bar {
   position: absolute;
   width: 0%;
   height: 100%;
-  background-color: blue;
+  background-color: black;
   transition: 5s;
 }
 body main .statistic .listenInformation .progressBars-nums .progressBar .percentage {
@@ -219,4 +258,16 @@ body main #signoutBtn {
 
 .hidden {
   display: none !important;
+}
+
+.genderPosition {
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.genderPosition select {
+  background: #e0e0e0;
+  border: 0;
+}
+.genderPosition select:focus {
+  outline: 0;
 }/*# sourceMappingURL=accountStyle.css.map */

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/sameDesign.css">
     <link rel="stylesheet" href="styles/accountStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="./styles/footer.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,14 +17,14 @@
             <div class="menuSocial">
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.html">HOME</a></li>
-                        <li><a href="">ABOUT</a></li>                        
-                        <li><a href="music.html">Music</a></li>
-                        <li><a href="">VIDEOS</a></li>
+                        <li ><a href="./index.html">HOME</a></li>
+                        <li><a href="./about.html">ABOUT</a></li>                        
+                        <li><a href="./music.html">Music</a></li>
+                        <li><a href="./video.html">VIDEOS</a></li>
                         <li><a href="">PAGES</a></li>
                         <li><a href="">CONTACT</a></li>
                         <li class="signInSignUp"><a  href="./loginRegister.html">Account</a></li>
-                        <li class="profile"><a  href="./profile.html">Profile</a></li>
+                        <li  class="profile selectedPage"><a  href="./profile.html">Profile</a></li>
                     </ul>
                 </div>
                 <!-- <div class="social">
@@ -43,9 +43,9 @@
                 <li class="profile"><a href="./profile.html">Profile</a></li>
                 <li class="signInSignUp"><a href="./loginRegister.html">Account</a></li>
                 <li><a href="./index.html">HOME</a></li>
-                <li><a href="">ABOUT</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
                 <li><a href="music.html">MUSIC</a></li>
-                <li><a href="">VIDEOS</a></li>
+                <li><a href="./video.html">VIDEOS</a></li>
                 <li><a href="">PAGES</a></li>
                 <li><a href="">CONTACT</a></li>
             </ul>
@@ -67,7 +67,7 @@
                 <span><label for="telephone">Telefon Nomresi</label><input type="text" placeholder="+994 XX XXX XX XX" id="telephone" ></span>
                 <span><label for="birthday">Dogum tarixi</label><input type="date" placeholder="birthday" id="birthday" ></span>
                 
-                <span><label for="gender">Cinsiyyət seçin</label>
+                <span class="genderPosition"><label for="gender">Cinsiyyət seçin</label>
                     <select id="gender" name="genderlist" form="profileDetail">
                     <option value="none">Daxil et</option>
 
@@ -76,7 +76,7 @@
                     
                     </select></span>
                 
-                <input type="submit" id="changeInfo" value="Hesab melumatlarini yenileyin">
+                <input class="btn" type="submit" id="changeInfo" value="Hesab melumatlarini yenileyin">
                 </form>
 
 
@@ -88,7 +88,7 @@
                     <span><input type="password" id="newPasswd" placeholder="Yeni kod"><label for="newPasswd">Yeni</label></span>
                     <span><input type="password" id="confirmNewPasswd" placeholder="Yeniden yeni kod"><label for="confirmNewPasswd">Yeniden</label></span>
                     <span><p id="infoNewPasswd"></p></span>
-                <span><input type="submit" id="changePasswd" value="Change password"></span>
+                <span><input class="btn" type="submit" id="changePasswd" value="Change password"></span>
 
                 </form>
             </div>
@@ -96,7 +96,7 @@
         <div data-formname="statistic" class="statistic ">
             <div class="listenInformation">
                 <div class="total">
-                    <h1>Total Liste Time</h1>
+                    <h1>Total Listen Time</h1>
                     <span id="totalListenedTme">Time</span>
                 </div>
                 <div class="progressBars">
@@ -113,13 +113,51 @@
                 <button id="likedVideosBtn">Liked music</button>
             </div>
             <div data-filterforms="likedVideosBtn" class="musicBox"></div>
+            
         </div>
         <form action="" id="signoutForm">
             <input type="submit" id="signoutBtn" value="Log out">
         </form>
         </main>
-        
-   
+        <footer>
+            <div class="footerAbout">
+                <div class="footerAbout-header  footerHeader">ABOUT DEEJEE</div>
+                <div class="footerAbout-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</div>
+    
+                <div class="footerSubscribe footerHeader">SUBSCRIBE</div>
+                <form action="">
+                    <input placeholder="Email" type="text" class="subscribeEmail">
+                    <input class="subscribeFooter" type="submit" value="Subscribe" class="subscribeBtn">
+                </form>
+            </div>
+            <div class="footerNavigations">
+                <div class="footerNavigations-header footerHeader">NAVIGATIONS</div>
+                <div class="footerNavigations-content">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>
+                        <li><a href="">MUSIC</a></li>
+                        <li><a href="">VIDEOS</a></li>
+                        
+                    </ul>
+                    <ul>
+                        <li><a href="">PAGES</a></li>
+                        <li><a href="">CONTACT</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="watchLive">
+                <div class="watchLive-header footerHeader">WATCH LIVE</div>
+                <div class="watchLive-content">
+                    <img src="./assets/footerWatch.jpg" alt="">
+                </div>
+            </div>
+            <div class="end">Copyright © 2023 All rights reserved | This template is made with  by Elvin</div>
+        </footer>
+        <div class="loadingScreen">
+            <img src="./assets/loadingScreen.svg" alt="">
+        </div>
 
     <script src="./js/profile.js"></script>
 </body>

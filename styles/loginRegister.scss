@@ -20,141 +20,11 @@ body{
     --music--btn--color:#E934FF;
     width: 100%;
     
-    // width: 100%;
-    // min-height: 120vh;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
-    // justify-content: space-around;
-    // background-color: #f8f8f8;
-    // nav{
-    //     width: 100%;
-    //     height: 120px;
-    //     background-color: var(--nav-bg-color);
-    //     position: fixed; 
-    //     z-index: 5;  
-        
-    //    .desktop{
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     padding: 0 120px;
-    //     width: 100%;
-    //     height: 100%;
-    //     @include desktop{
-    //         padding: 0 20px;
-    //     }
-        
-    //     @include tablet{
-    //         padding: 0 10px;
-    //         // justify-content: space-evenly;
-    //     }
-    //     a,i{
-    //         color: var(--nav-font-color);
-            
-    //     }
-    //     li{
-    //         line-height: 30px;
-            
-    //     }
-    //     .mobileMenuBar{
-    //         display: none;
-    //         font-size: 30px;
-    //         @include tablet{
-    //             display: block;
-    //         }
-    //     }
-    //     .logo{
-    //         a{
-    //             font-size: 40px;
-    //             font-weight: 800;
-    //             // color: var(--nav-font-color);
-                
-    //         }
-    //     }
-    //     .menuSocial{
-    //         display: flex;
-    //         column-gap: 60px;
-    //         @include tablet{
-    //             display: none;
-    //         }
-    //         .menu{
-    //             ul{
-    //                 display: flex;
-    //                 column-gap: 50px;
-    //                 font-size: 17px;
-    //                 li{
-    //                     // text-decoration: underline;
-    //                     transition: 1s;
     
-    //                 }
-    //                 li:hover{
-    //                     border-bottom: 1px solid white;
-    //                 }
-                    
-                        
-                    
-    //             }
-    //         }
-    //         .social{
-    //             ul{
-    //                 display: flex;
-    //                 column-gap: 18px;
-    //             }
-    //             @include desktop{
-    //                 display: none !important;
-    //             }
-    //         }
-    
-    //     }
-        
-    //    }
-    //    .mobileMenu{
-    //     width: 100%;
-    //     transition: 0.5s;       
-    //     background-color: var(--nav-bg-color);
-    //     display: none;
-    //     overflow: hidden;
-    //     height: 0;
-    //     padding: 0 30px 0 30px;
-    //     @include tablet{
-    //         display: grid !important;
-            
-    
-    //     }
-    //     ul{
-    //         width: 100%;
-    //         height: 100%;
-    //         display: inline-block;
-    //         background-color: grey;
-    //         flex-direction: column;
-    //         padding: 0 10px 0 0; 
-            
-    //         li{
-    //             display: inline-block;
-    //             width: 100%;
-    //             line-height: 35px;
-    //             padding: 0 10px;
-    //             border-radius: 10px;
-    //             a{
-    //                 color: var(--nav-font-color);
-    //             }
-    //             li:hover{
-    //             background-color: red;
-    
-    //             }
-    //         }
-    
-    //     }
-       
-        
-    // }
-    
-    
-    // }
     main{
-        
+        // background: rgb(233,22,22);
+        // background: linear-gradient(90deg, rgba(233,22,22,1) 0%, rgba(31,57,246,1) 0%);
+        background-image: url("/assets/homeSliderBg.jpg");
         width: 100%;
         padding-top: 120px;
         display: flex;
@@ -163,10 +33,13 @@ body{
             width: 500px;
             min-height: 650px;
             padding-bottom: 40px;
-            // background-color: red;
-        background-color: #f8f8f8;
-            border: 0.6px solid rgb(177, 176, 176);
-             border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.303);
+        backdrop-filter: blur(12px);
+
+        // background-color: #f8f8f8;
+            // border: 0.6px solid rgb(177, 176, 176);
+            border: 1px solid yellow; 
+            border-radius: 10px;
              display: flex;
              flex-direction: column;
              align-items: center;
@@ -203,7 +76,7 @@ body{
     
                     }
                     .buttonFocused{
-                        background-color: white;
+                        background-color: #E2DC20;
                     }
                 }
              }
@@ -231,8 +104,8 @@ body{
                 row-gap: 30px;
                 
                 input[type=submit]{
-                    background-color: #b6958b;
-                    color: #eeeeee;
+                    background-color: #E2DC20;
+                    color: black;
                     cursor: pointer;
                 }
                 input[type=submit]:hover{
@@ -253,9 +126,19 @@ body{
                 column-gap: 5px;
                 span{
                     width: 100%;
+                    color: white;
                 }
                 .nameSurName{
                     width: 49%;
+                }
+                input[type=submit]{
+                    background-color: #E2DC20;
+                    color: black;
+                    cursor: pointer;
+                }
+                input[type=submit]:hover{
+                    background-color: #eeeeee;
+                    color: #b6958b;
                 }
              }
     

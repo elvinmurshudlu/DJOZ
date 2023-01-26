@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/sameDesign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DJoz</title>
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
@@ -16,6 +17,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
 
 </head>
 <body >
@@ -25,8 +29,8 @@
             <div class="menuSocial">
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.html">HOME</a></li>
-                        <li><a href="">ABOUT</a></li>                        
+                        <li class="selectedPage"><a href="./index.html">HOME</a></li>
+                        <li><a href="./about.html">ABOUT</a></li>                        
                         <li><a href="./music.html">Music</a></li>
                         <li><a href="./video.html">VIDEOS</a></li>
                         <li><a href="">PAGES</a></li>
@@ -35,6 +39,8 @@
                         <li class="profile"><a  href="./profile.html">Profile</a></li>
                     </ul>
                 </div>
+                <button id="darkModeBtn">Dark</button>
+
                 <!-- <div class="social">
                     <ul>
                         <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
@@ -51,7 +57,7 @@
                 <li class="profile"><a href="./profile.html">Profile</a></li>
                 <li class="signInSignUp"><a href="./loginRegister.html">Account</a></li>
                 <li><a href="./index.html">HOME</a></li>
-                <li><a href="">ABOUT</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
                 <li><a href="music.html">MUSIC</a></li>
                 <li><a href="./video.html">VIDEOS</a></li>
                 <li><a href="">PAGES</a></li>
@@ -61,56 +67,59 @@
     </nav>
     <main>
         <section class="header">
-            <div class="header_text">
-            <span class="header_text_">NEW SINGLE</span>
-            <span class="header_text_main">Feel the heart beats</span>
-            <span class="header_text_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</span>
+            <video id="headerVideo" src="./videos/homeMainLightMode.mp4" muted autoplay loop type="mp4"></video>
+            <div class="text">
+                <div class="text_text">
+                    <span class="text_text_">NEW SINGLE</span>
+                    <span class="text_text_main">Feel the heart beats</span>
+                    <span class="text_text_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</span>
+                    </div>
             </div>
-            <div class="header_button">
+            <!-- <div class="header_button">
                
                 <div class="header_button-round">
                     <i class="fa-solid fa-play"></i>
                 </div>
-            </div>
+            </div> -->
         </section>
-        <section class="slider">
+        <section id="sliderİmg"  class="slider">
             <div class="slider-main">
                 <div class="slider-main_header">UPCOMING EVENTS</div>
                 <div class="slider-main_slides">
                 <div class="slider-main_slides-slide">
                     <div class="slide_img">
-                        <img src="./assets/slideImg1.jpg" alt="">
+                        <img src="./assets/slideImg2.jpg" alt="">
                     </div>
                     <div class="slide_footer">
-                        <h4>David Guetta Miami Ultra</h4>
+                        <h4>MiyaGi & Andy Panda</h4>
                         <h6>Funkhaus Berlin, Berlin, Germany</h6>
                     </div>
                 </div>
                 <div class="slider-main_slides-slide">
                     <div class="slide_img">
-                        <img src="./assets/slideImg1.jpg" alt="">
+                        <img src="./assets/slideImg.jpg" alt="">
                     </div>
                     <div class="slide_footer">
-                        <h4>David Guetta Miami Ultra</h4>
+                        <h4>Till Lindemann</h4>
                         <h6>Funkhaus Berlin, Berlin, Germany</h6>
                     </div>
                 </div>
                 <div class="slider-main_slides-slide">
                     <div class="slide_img">
-                        <img src="./assets/slideImg1.jpg" alt="">
+                        <img src="./assets/slideImg3.jpg" alt="">
                     </div>
                     <div class="slide_footer">
-                        <h4>David Guetta Miami Ultra</h4>
+                        <h4>Eminem</h4>
                         <h6>Funkhaus Berlin, Berlin, Germany</h6>
                     </div>
                 </div>
                 <div class="slider-main_slides-slide">
                     <div class="slide_img">
-                        <img src="./assets/slideImg1.jpg" alt="">
+                        <img src="./assets/slideImg5.jpg" alt="">
                     </div>
                     <div class="slide_footer">
-                        <h4>David Guetta Miami Ultra</h4>
+                        <h4>Tupac Shakur</h4>
                         <h6>Funkhaus Berlin, Berlin, Germany</h6>
                     </div>
                 </div>
@@ -141,17 +150,17 @@
                 </div>
                 <div class="box ">
                     <img src="./assets/offerBoxHearth.jpg" alt="">
-                    <div class="box_header">Wedding</div>
+                    <div class="box_header">Clubs and bar</div>
                     <div class="box_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, quaerat.</div>
                 </div>
                 <div class="box ">
                     <img src="./assets/offerBoxHearth.jpg" alt="">
-                    <div class="box_header">Wedding</div>
+                    <div class="box_header">Corporate events</div>
                     <div class="box_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, quaerat.</div>
                 </div>
                 <div class="box boxColor">
                     <img src="./assets/offerBoxHearth.jpg" alt="">
-                    <div class="box_header">Wedding</div>
+                    <div class="box_header">DJ lessons</div>
                     <div class="box_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, quaerat.</div>
                 </div>
             </div>
@@ -332,48 +341,44 @@
         
     </main>
     <footer>
-        <h1>MUSIC FESTIVAL START IN</h1>
-        <section class="timer">
-            <div class="days time">
-                <span class="Num"></span>
-                <span class="timeWord">DAYS</span>
+        <div class="footerAbout">
+            <div class="footerAbout-header  footerHeader">ABOUT DEEJEE</div>
+            <div class="footerAbout-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</div>
+
+            <div class="footerSubscribe footerHeader">SUBSCRIBE</div>
+            <form action="" class="subscribeFooter">
+                <input placeholder="Email" type="text" class="subscribeEmail">
+                <input  type="submit" value="Subscribe" class="subscribeBtn">
+            </form>
+        </div>
+        <div class="footerNavigations">
+            <div class="footerNavigations-header footerHeader">NAVIGATIONS</div>
+            <div class="footerNavigations-content">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">MUSIC</a></li>
+                    <li><a href="">VIDEOS</a></li>
+                    
+                </ul>
+                <ul>
+                    <li><a href="">PAGES</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    
+                </ul>
             </div>
-            <div class="hours time">
-                <span class="Num"></span>
-                <span class="timeWord">HOURS</span>
+        </div>
+        <div class="watchLive">
+            <div class="watchLive-header footerHeader">WATCH LIVE</div>
+            <div class="watchLive-content">
+                <img src="./assets/footerWatch.jpg" alt="">
             </div>
-            <div class="minutes time">
-                <span class="Num"></span>
-                <span class="timeWord">MINUTES</span>
-            </div>
-            <div class="seconds time">
-                <span class="Num"></span>
-                <span class="timeWord">SECONDS</span>
-            </div>
-            
-        </section>
-        <button>Buy Tickets</button>
-        <section class="socialSection">
-            <ul class="phone">
-                <li>
-                    <span>Phone</span><span>1-677-124-44227</span>
-                </li>
-                <li><span>Email</span><span>DJ.Music@gmail.com</span></li>
-            </ul>
-            <ul class="social">
-                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-            </ul>
-            <div class="socialSection-sendMail">
-                <h2>Send me with</h2>
-                <form class="sendMeMail" action="">
-                    <input type="text" class="targetMail" placeholder="Email"><input type="submit">
-                </form>
-            </div>
-        </section>
+        </div>
+        <div class="end">Copyright © 2023 All rights reserved | This template is made with  by Elvin</div>
     </footer>
+    <div class="loadingScreen">
+        <img src="./assets/loadingScreen.svg" alt="">
+    </div>
 
 
     <script src="./js/main.js"></script>
